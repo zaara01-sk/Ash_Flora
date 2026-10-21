@@ -1,5 +1,40 @@
 [
   {
+    "id": "multi-daisy",
+    "name": "Dreamscape Daisies",
+    "category": "log-gardens",
+    "price": 349,
+    "salePrice": null,
+    "description": "🌼A whimsical, wiggly mini garden arrangement featuring a delightful cluster of multi-colored pastel daisies—ranging from soft blush and lavender to sky blue and sunny cream—nestled securely inside a rustic wooden slice log. Pure aesthetic joy for your bedside or workspace!",
+    "details": [
+      "Height: approx 10-11 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Pastel Mix (Blush, Lavender, Sky Blue, and Sunny Cream etc)",
+        "swatch": "#f5d7e1",
+        "images": [
+          "images/products/multi-daisy/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "berry-orchid",
     "name": "Vibrant Berry Orchid",
     "category": "single-flowers",
