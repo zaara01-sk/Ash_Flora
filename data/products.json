@@ -3,7 +3,7 @@
     "id": "rapunzel",
     "name": "Rapunzel Flower",
     "category": "single-flowers",
-    "price": 199,
+    "price": 230,
     "salePrice": null,
     "description": "☀️🦎💜A magical, fairytale-inspired statement stem featuring radiant golden-yellow outer petals framing soft pastel purple inner layers, complete with delicate, detailed floral stamens and lush green leaves. It brings an enchanting, storybook glow to any room.",
     "details": [
@@ -25,7 +25,7 @@
     "variants": [
       {
         "id": "colour-1",
-        "label": "Colour 1",
+        "label": "Golden Yellow & Purple",
         "swatch": "#f0cd1c",
         "images": [
           "images/products/rapunzel/colour-1-1.webp"
