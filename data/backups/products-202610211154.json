@@ -1,0 +1,137 @@
+[
+  {
+    "id": "blossom-keychain",
+    "name": "Blossom Keychain",
+    "category": "keychains",
+    "price": 119,
+    "salePrice": null,
+    "description": "Compact, lightweight, and durable floral keychains featuring layered petal designs with contrasting centers and a sturdy silver keyring chain. Perfect for accessorizing your scooty keys, college bag, or wallet.",
+    "details": [
+      "Height: approx. 10- 11 cm (with keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry; gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pink",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/blossom-keychain/pink-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/blossom-keychain/yellow-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "trisun-pot",
+    "name": "Tri Sunflower Pot",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": null,
+    "description": "🌻A cheerful cluster of bright yellow pipe cleaner sunflowers with rich brown centers, snugly planted inside a matching handcrafted textured brown pot with lush green moss. It never wilts and brings instant sunshine to any study table or living room corner!🌻",
+    "details": [
+      "Height: approx 10-12 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune",
+      "Wooden Base is for display purpose only, not with the product."
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/trisun-pot/yellow-1.webp",
+          "images/products/trisun-pot/yellow-2.webp",
+          "images/products/trisun-pot/yellow-3.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "tulip-stem",
+    "name": "Tulip stem",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": 179,
+    "description": "Soft, velvety hand-twisted pipe cleaner tulip that never wilts. Perfect for vases or gifting. 🌷🌷🌷",
+    "details": [
+      "Height: approx.28- 30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-2",
+        "label": "Colour 1",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/tulip-stem/colour-2-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-2",
+        "label": "Golden Sunset yellow",
+        "swatch": "#fec64d",
+        "images": [
+          "images/products/tulip-stem/colour-2-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-3",
+        "label": "Mauve Haze",
+        "swatch": "#e2b1d0",
+        "images": [
+          "images/products/tulip-stem/colour-3-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  }
+]
