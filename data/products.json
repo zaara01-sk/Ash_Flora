@@ -83,13 +83,13 @@
   },
   {
     "id": "tulip-stem",
-    "name": "Fuzzy Tulip Stem [Sample]",
+    "name": "Tulip stem",
     "category": "single-flowers",
     "price": 199,
     "salePrice": 179,
-    "description": "Soft, velvety hand-twisted pipe cleaner tulip that never wilts. Perfect for vases or gifting.",
+    "description": "Soft, velvety hand-twisted pipe cleaner tulip that never wilts. Perfect for vases or gifting. 🌷🌷🌷",
     "details": [
-      "Height: approx 28-30 cm",
+      "Height: approx.28- 30 cm",
       "Material: Premium plush chenille pipe cleaners & floral wire",
       "Care: Keep dry, gently dust with a soft brush",
       "Handcrafted one petal at a time in Pune"
@@ -97,31 +97,38 @@
     "badge": "Bestseller",
     "status": "in-stock",
     "leadTimeDays": 2,
-    "createdAt": "2026-10-18",
+    "createdAt": "2026-10-21",
     "featured": true,
     "occasions": [
       "Birthday",
-      "Anniversary",
-      "Home decor",
-      "Valentine's"
+      "Anniversary"
     ],
     "hidden": false,
     "variants": [
       {
-        "id": "pink",
-        "label": "Blush Pink",
+        "id": "colour-2",
+        "label": "Colour 1",
         "swatch": "#F6B3C1",
         "images": [
-          "images/products/sample-tulip/pink-1.jpg"
+          "images/products/tulip-stem/colour-2-1.webp"
         ],
         "status": "in-stock"
       },
       {
-        "id": "yellow",
-        "label": "Sunny Yellow",
-        "swatch": "#F9C846",
+        "id": "colour-2",
+        "label": "Golden Sunset yellow",
+        "swatch": "#fec64d",
         "images": [
-          "images/products/sample-tulip/yellow-1.jpg"
+          "images/products/tulip-stem/colour-2-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-3",
+        "label": "Mauve Haze",
+        "swatch": "#e2b1d0",
+        "images": [
+          "images/products/tulip-stem/colour-3-1.webp"
         ],
         "status": "in-stock"
       }
