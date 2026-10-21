@@ -1,0 +1,45 @@
+[
+  {
+    "_comment": "ASH FLORA PRODUCT TEMPLATE: Copy this block to add a new product in data/products.json",
+    "id": "tulip-stem",
+    "name": "Fuzzy Tulip Stem",
+    "category": "single-flowers",
+    "price": 149,
+    "salePrice": 129,
+    "description": "A velvety hand-twisted tulip that never wilts.",
+    "details": [
+      "Height: 30 cm",
+      "Material: chenille pipe cleaners & floral wire",
+      "Care: keep dry and gently dust"
+    ],
+    "badge": "Bestseller",
+    "status": "made-to-order",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": ["Birthday", "Anniversary", "Valentine's"],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pink",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/tulip-stem/pink-1.webp",
+          "images/products/tulip-stem/pink-2.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/tulip-stem/yellow-1.webp"
+        ],
+        "price": 159,
+        "status": "in-stock"
+      }
+    ]
+  }
+]

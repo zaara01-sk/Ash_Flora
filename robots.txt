@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /data/backups/
+
+Sitemap: https://zaara01-sk.github.io/Ash_Flora/sitemap.xml

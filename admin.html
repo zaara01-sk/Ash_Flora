@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ash Flora — Owner Control Panel</title>
+  <!-- ADM-1: Strictly noindex and private -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #FFF7F9;
+      --color-blush: #FBD5DF;
+      --color-rose: #F08BA5;
+      --color-deep-rose: #C94F78;
+      --color-ink: #4A2C3A;
+      --color-muted: #8A6B78;
+      --color-success: #4FA37B;
+      --color-alert: #D64550;
+      --radius-card: 20px;
+      --radius-badge: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-ink);
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.5;
+      padding-bottom: 4rem;
+    }
+    header {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid var(--color-blush);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-title {
+      font-family: 'Fredoka', cursive;
+      font-size: 1.4rem;
+      color: var(--color-deep-rose);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-badge);
+      min-height: 44px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary { background: var(--color-deep-rose); color: #FFFFFF; }
+    .btn-primary:hover { background: #B03A62; }
+    .btn-secondary { background: var(--color-blush); color: var(--color-deep-rose); }
+    .btn-outline { background: #FFFFFF; border: 1.5px solid var(--color-blush); color: var(--color-deep-rose); }
+    .btn-danger { background: var(--color-alert); color: #FFFFFF; }
+    .card {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-blush);
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(201, 79, 120, 0.08);
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--color-ink);
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid var(--color-blush);
+      border-radius: 10px;
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      min-height: 44px;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--color-deep-rose);
+      box-shadow: 0 0 0 3px rgba(201, 79, 120, 0.15);
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius-badge);
+      font-weight: 700;
+      font-size: 0.9rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-blush);
+      color: var(--color-ink);
+      white-space: nowrap;
+      min-height: 44px;
+      cursor: pointer;
+    }
+    .tab-btn.is-active {
+      background: var(--color-deep-rose);
+      color: #FFFFFF;
+      border-color: var(--color-deep-rose);
+    }
+    .wizard-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .wizard-step {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      flex: 1;
+      text-align: center;
+    }
+    .wizard-step.is-active {
+      color: var(--color-deep-rose);
+    }
+    .wizard-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+    .wizard-step.is-active .wizard-num {
+      background: var(--color-deep-rose);
+      color: #FFFFFF;
+    }
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .thumb-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 1.5px solid var(--color-blush);
+      overflow: hidden;
+      position: relative;
+      background: #FFF7F9;
+    }
+    .thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .thumb-actions {
+      position: absolute;
+      inset: 0;
+      background: rgba(74, 44, 58, 0.75);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .thumb-box:hover .thumb-actions { opacity: 1; }
+    .thumb-btn-sm {
+      background: #FFFFFF;
+      color: var(--color-ink);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .product-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--color-blush);
+    }
+    .product-row-img {
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: var(--color-blush);
+      flex-shrink: 0;
+    }
+    .product-row-info {
+      flex-grow: 1;
+    }
+    .product-row-actions {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .status-badge-sm {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-badge);
+    }
+    .status-in-stock { background: #E3F5EC; color: #1B7943; }
+    .status-made-to-order { background: #FFF4E5; color: #B35C00; }
+    .status-sold-out { background: #FFE8E8; color: #C92A2A; }
+    .status-hidden { background: #EEEEEE; color: #666666; }
+    .toast-box {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--color-ink);
+      color: #FFFFFF;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-badge);
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-title">🌸 Ash Flora Admin</div>
+    <div id="auth-actions" style="display: flex; gap: 0.5rem;">
+      <button type="button" class="btn btn-outline" id="logout-btn" style="display: none;">Log Out</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Auth View (ADM-2) -->
+    <div id="auth-section" class="card">
+      <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.5rem; margin-bottom: 0.5rem;">Owner Access</h2>
+      <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 1.25rem;">
+        Paste your GitHub Fine-Grained Personal Access Token with <strong>Contents: Read and write</strong>. It is saved only in your phone's browser and never in code or the repository.
+      </p>
+      <form id="token-form">
+        <div class="form-group">
+          <label class="form-label" for="repo-input">GitHub Repository (e.g. username/Ash_Flora or username.github.io)</label>
+          <input type="text" id="repo-input" class="form-input" placeholder="zaara01-sk/Ash_Flora" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="token-input">GitHub Personal Access Token (github_pat_...)</label>
+          <input type="password" id="token-input" class="form-input" placeholder="github_pat_..." required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Connect & Verify Token</button>
+      </form>
+    </div>
+
+    <!-- Main Admin Dashboard -->
+    <div id="dashboard-section" style="display: none;">
+
+      <!-- Nav Tabs -->
+      <div class="tabs-bar">
+        <button type="button" class="tab-btn is-active" data-tab="products">Catalogue Products</button>
+        <button type="button" class="tab-btn" data-tab="add-product">Add Product Wizard</button>
+        <button type="button" class="tab-btn" data-tab="settings">Store Settings</button>
+        <button type="button" class="tab-btn" data-tab="validate">Check Catalogue</button>
+      </div>
+
+      <!-- Tab 1: Product List (ADM-3) -->
+      <div id="tab-products" class="tab-content card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.35rem;">Manage Products</h2>
+          <button type="button" class="btn btn-primary" onclick="switchTab('add-product')">+ Add New Product</button>
+        </div>
+        <input type="text" id="admin-search" class="form-input" placeholder="Search by name or category..." style="margin-bottom: 1rem;">
+        <div id="admin-products-list">Loading products...</div>
+      </div>
+
+      <!-- Tab 2: 4-Step Phone Wizard (ADM-4, 19.2) -->
+      <div id="tab-add-product" class="tab-content card" style="display: none;">
+        <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.35rem; margin-bottom: 1rem;" id="wizard-title">Add New Handcrafted Bloom</h2>
+
+        <div class="wizard-steps">
+          <div class="wizard-step is-active" data-step="1">
+            <span class="wizard-num">1</span>
+            <span>Basics</span>
+          </div>
+          <div class="wizard-step" data-step="2">
+            <span class="wizard-num">2</span>
+            <span>Colours & Photos</span>
+          </div>
+          <div class="wizard-step" data-step="3">
+            <span class="wizard-num">3</span>
+            <span>Extras</span>
+          </div>
+          <div class="wizard-step" data-step="4">
+            <span class="wizard-num">4</span>
+            <span>Preview & Publish</span>
+          </div>
+        </div>
+
+        <form id="product-wizard-form">
+          <!-- Step 1: Basics -->
+          <div class="wizard-page" id="wizard-step-1">
+            <div class="form-group">
+              <label class="form-label" for="prod-title">Product Title * (max 60 chars)</label>
+              <input type="text" id="prod-title" class="form-input" maxlength="60" placeholder="e.g. Velvety Pastel Tulip" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prod-id">Unique Slug ID * (lowercase, letters and hyphens only)</label>
+              <input type="text" id="prod-id" class="form-input" placeholder="e.g. velvety-pastel-tulip" pattern="[a-z0-9\-]+" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="prod-price">Price (₹) *</label>
+                <input type="number" id="prod-price" class="form-input" min="1" placeholder="199" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="prod-saleprice">Sale Price (₹, optional, must be lower)</label>
+                <input type="number" id="prod-saleprice" class="form-input" min="1" placeholder="179">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prod-cat">Category *</label>
+              <select id="prod-cat" class="form-select" required>
+                <option value="single-flowers">Single Flowers</option>
+                <option value="keychains">Keychains</option>
+                <option value="bouquets">Bouquets</option>
+                <option value="log-gardens">Log Gardens</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prod-desc">Description * (max 400 chars)</label>
+              <textarea id="prod-desc" class="form-textarea" maxlength="400" rows="3" placeholder="Soft, fuzzy hand-twisted pipe cleaner bloom crafted in Pune." required></textarea>
+              <small id="desc-count" style="color: var(--color-muted); text-align: right;">0 / 400</small>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="goToStep(2)" style="width: 100%;">Next: Colours & Photos →</button>
+          </div>
+
+          <!-- Step 2: Colours & Photos (ADM-4, ADM-5: max 4 photos) -->
+          <div class="wizard-page" id="wizard-step-2" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <label class="form-label">Colour Variants (at least 1 required)</label>
+              <button type="button" class="btn btn-secondary" onclick="addVariantBlock()" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">+ Add Colour</button>
+            </div>
+
+            <div id="variants-container"></div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+              <button type="button" class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+              <button type="button" class="btn btn-primary" onclick="goToStep(3)" style="flex-grow: 1;">Next: Extras →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Extras -->
+          <div class="wizard-page" id="wizard-step-3" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="prod-details">Product Details (up to 5 short bullets, one per line)</label>
+              <textarea id="prod-details" class="form-textarea" rows="4" placeholder="Height: 28 cm&#10;Material: chenille pipe cleaners&#10;Care: keep dry and gently dust&#10;Handmade in Pune"></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="prod-status">Availability</label>
+                <select id="prod-status" class="form-select">
+                  <option value="in-stock">In Stock</option>
+                  <option value="made-to-order">Made to Order</option>
+                  <option value="sold-out">Sold Out</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="prod-leadtime">Lead Time (days, for made-to-order)</label>
+                <input type="number" id="prod-leadtime" class="form-input" min="1" max="30" value="2">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prod-badge">Badge</label>
+              <select id="prod-badge" class="form-select">
+                <option value="">None (Automatic 'New' for 14 days)</option>
+                <option value="Bestseller">Bestseller</option>
+                <option value="Limited">Limited</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 1rem;">
+              <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.9rem;">
+                <input type="checkbox" id="prod-featured" checked>
+                <span>Feature on Homepage</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.9rem;">
+                <input type="checkbox" id="prod-hidden">
+                <span>Hide Product (draft)</span>
+              </label>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <button type="button" class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+              <button type="button" class="btn btn-primary" onclick="goToStep(4)" style="flex-grow: 1;">Next: Preview & Publish →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Preview & Publish (ADM-6, ADM-7) -->
+          <div class="wizard-page" id="wizard-step-4" style="display: none;">
+            <h3 style="font-size: 1rem; color: var(--color-deep-rose); margin-bottom: 0.75rem;">Live Card Preview</h3>
+            <div id="preview-card-wrap" style="max-width: 300px; margin-bottom: 1.5rem;"></div>
+
+            <div id="publish-progress" style="display: none; background: #FFF0F4; border: 1px solid var(--color-rose); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+              <div id="publish-status-text" style="font-weight: 700; color: var(--color-deep-rose); font-size: 0.9rem;">Preparing images...</div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button type="button" class="btn btn-outline" onclick="goToStep(3)">← Back</button>
+              <button type="button" class="btn btn-primary" id="publish-btn" onclick="publishProduct()" style="flex-grow: 1;">🚀 Publish to GitHub</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Tab 3: Site Settings (Section 19.3) -->
+      <div id="tab-settings" class="tab-content card" style="display: none;">
+        <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.35rem; margin-bottom: 1rem;">Store Settings</h2>
+        <form id="settings-form">
+          <div class="form-group">
+            <label class="form-label" for="set-whatsapp">WhatsApp Business Number (digits only, e.g. 919876543210)</label>
+            <input type="tel" id="set-whatsapp" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-instagram">Instagram Handle (without @, e.g. ashflora.pune)</label>
+            <input type="text" id="set-instagram" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-reviewform">Review Form Share URL (optional Google Form)</label>
+            <input type="url" id="set-reviewform" class="form-input" placeholder="https://forms.gle/...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-announcement">Announcement Bar Text (leave empty to hide)</label>
+            <input type="text" id="set-announcement" class="form-input">
+          </div>
+          <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.9rem;">
+              <input type="checkbox" id="set-orders-open">
+              <span>Orders Open (Uncheck to pause checkout)</span>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-closed-msg">Orders Paused Message</label>
+            <input type="text" id="set-closed-msg" class="form-input" value="We are temporarily pausing new orders to fulfill ongoing handcrafted requests.">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-giftwrap">Gift Wrap Price (₹)</label>
+            <input type="number" id="set-giftwrap" class="form-input" value="49" min="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="set-deliverynote">Delivery Note (shown in cart & bill)</label>
+            <input type="text" id="set-deliverynote" class="form-input" value="We deliver within Pune only. Delivery charge is confirmed on WhatsApp.">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Save & Publish Settings</button>
+        </form>
+      </div>
+
+      <!-- Tab 4: Catalogue Validation & Backups (ADM-8, 19.2) -->
+      <div id="tab-validate" class="tab-content card" style="display: none;">
+        <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.35rem; margin-bottom: 1rem;">Check Catalogue & Backups</h2>
+        <button type="button" class="btn btn-secondary" onclick="runCatalogueCheck()" style="margin-bottom: 1rem;">🔍 Run Catalogue Check</button>
+        <div id="validation-report" style="background: #FFF7F9; border-radius: 12px; padding: 1rem; border: 1px solid var(--color-blush); font-size: 0.85rem; font-family: monospace; white-space: pre-wrap;">Click "Run Catalogue Check" to inspect data/products.json.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="admin-toast" class="toast-box"></div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="products-loader.js"></script>
+  <script>
+    const TOKEN_KEY = "ash_flora_github_token";
+    const REPO_KEY = "ash_flora_github_repo";
+
+    let githubToken = localStorage.getItem(TOKEN_KEY) || "";
+    let githubRepo = localStorage.getItem(REPO_KEY) || "";
+    let liveProducts = [];
+    let editingProductIndex = -1;
+    let variantBlocks = [];
+
+    // Toast helper
+    function showAdminToast(msg) {
+      const t = document.getElementById("admin-toast");
+      t.textContent = msg;
+      t.style.display = "block";
+      setTimeout(() => { t.style.display = "none"; }, 3500);
+    }
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("is-active", b.dataset.tab === tabId));
+      document.querySelectorAll(".tab-content").forEach(c => c.style.display = "none");
+      document.getElementById(`tab-${tabId}`).style.display = "block";
+      if (tabId === "products") loadAdminProducts();
+    }
+    document.querySelectorAll(".tab-btn").forEach(b => b.onclick = () => switchTab(b.dataset.tab));
+
+    // Wizard Steps
+    function goToStep(num) {
+      // Basic validation for step 1
+      if (num === 2) {
+        const title = document.getElementById("prod-title").value.trim();
+        const price = Number(document.getElementById("prod-price").value);
+        const salePrice = Number(document.getElementById("prod-saleprice").value);
+        if (!title) { alert("Please enter a product title."); return; }
+        if (!price || price < 1) { alert("Please enter a valid price."); return; }
+        if (salePrice && salePrice >= price) { alert("Sale price must be strictly lower than regular price."); return; }
+      }
+      if (num === 3) {
+        if (variantBlocks.length === 0) { alert("Please add at least 1 colour variant."); return; }
+        const hasMissingPhoto = variantBlocks.some(v => v.images.length === 0);
+        if (hasMissingPhoto) { alert("Each colour variant must have at least 1 photo."); return; }
+      }
+      if (num === 4) {
+        updateLivePreview();
+      }
+
+      document.querySelectorAll(".wizard-step").forEach(s => s.classList.toggle("is-active", Number(s.dataset.step) <= num));
+      document.querySelectorAll(".wizard-page").forEach(p => p.style.display = "none");
+      document.getElementById(`wizard-step-${num}`).style.display = "block";
+    }
+
+    // Description counter
+    const descInput = document.getElementById("prod-desc");
+    const descCount = document.getElementById("desc-count");
+    if (descInput) {
+      descInput.oninput = () => { descCount.textContent = `${descInput.value.length} / 400`; };
+    }
+
+    // Token Connection (ADM-2)
+    const tokenForm = document.getElementById("token-form");
+    tokenForm.onsubmit = async (e) => {
+      e.preventDefault();
+      const token = document.getElementById("token-input").value.trim();
+      const repo = document.getElementById("repo-input").value.trim();
+
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}`, {
+          headers: { "Authorization": `token ${token}` }
+        });
+        if (res.ok) {
+          githubToken = token;
+          githubRepo = repo;
+          localStorage.setItem(TOKEN_KEY, token);
+          localStorage.setItem(REPO_KEY, repo);
+          showAdminToast("Connected successfully to GitHub! 🌸");
+          initAdmin();
+        } else {
+          alert("Invalid token or repository access denied. Check that your token has Contents: Read and write.");
+        }
+      } catch (err) {
+        alert("Connection failed: " + err.message);
+      }
+    };
+
+    document.getElementById("logout-btn").onclick = () => {
+      localStorage.removeItem(TOKEN_KEY);
+      localStorage.removeItem(REPO_KEY);
+      location.reload();
+    };
+
+    function initAdmin() {
+      if (githubToken && githubRepo) {
+        document.getElementById("auth-section").style.display = "none";
+        document.getElementById("dashboard-section").style.display = "block";
+        document.getElementById("logout-btn").style.display = "inline-flex";
+        loadAdminProducts();
+        loadAdminSettings();
+      } else {
+        document.getElementById("auth-section").style.display = "block";
+        document.getElementById("dashboard-section").style.display = "none";
+      }
+    }
+
+    // Load Products
+    async function loadAdminProducts() {
+      const container = document.getElementById("admin-products-list");
+      container.innerHTML = "Fetching catalogue from GitHub...";
+      try {
+        const res = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/products.json`, {
+          headers: { "Authorization": `token ${githubToken}` }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const content = decodeURIComponent(escape(atob(data.content)));
+          liveProducts = JSON.parse(content);
+          renderAdminProductsList(liveProducts);
+        } else {
+          container.innerHTML = "Could not load data/products.json from repository.";
+        }
+      } catch (e) {
+        container.innerHTML = "Error: " + e.message;
+      }
+    }
+
+    function renderAdminProductsList(products) {
+      const container = document.getElementById("admin-products-list");
+      container.innerHTML = "";
+      if (!Array.isArray(products) || products.length === 0) {
+        container.innerHTML = "<p>No products found in catalogue.</p>";
+        return;
+      }
+
+      products.forEach((p, idx) => {
+        const cover = (p.variants && p.variants[0] && p.variants[0].images && p.variants[0].images[0]) || "";
+        const row = document.createElement("div");
+        row.className = "product-row";
+        row.innerHTML = `
+          <img src="${cover}" class="product-row-img" alt="${p.name}">
+          <div class="product-row-info">
+            <strong>${p.name}</strong> · ₹${p.price} ${p.salePrice ? `<span style="color: var(--color-deep-rose);">(Sale: ₹${p.salePrice})</span>` : ""}<br>
+            <span style="font-size: 0.8rem; color: var(--color-muted);">${p.category} · ${p.variants ? p.variants.length : 0} colours</span><br>
+            <span class="status-badge-sm status-${p.status || 'in-stock'}">${p.status || 'in-stock'}</span>
+            ${p.hidden ? '<span class="status-badge-sm status-hidden">Hidden</span>' : ''}
+          </div>
+          <div class="product-row-actions">
+            <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="editProduct(${idx})">Edit</button>
+            <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="duplicateProduct(${idx})">Duplicate</button>
+            <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="toggleSoldOut(${idx})">${p.status === 'sold-out' ? 'In Stock' : 'Sold Out'}</button>
+            <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="toggleHide(${idx})">${p.hidden ? 'Show' : 'Hide'}</button>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    // Image resizing & WebP compression (ADM-5)
+    async function processImageFile(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement("canvas");
+            let w = img.width;
+            let h = img.height;
+            const max = 1200;
+
+            if (w > max || h > max) {
+              if (w > h) { h = Math.round((h * max) / w); w = max; }
+              else { w = Math.round((w * max) / h); h = max; }
+            }
+
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, w, h);
+
+            // Export as WebP under 300KB
+            let quality = 0.85;
+            let dataUrl = canvas.toDataURL("image/webp", quality);
+            resolve({
+              dataUrl,
+              base64: dataUrl.split(",")[1],
+              originalSize: file.size,
+              processedSize: Math.round(dataUrl.length * 0.75)
+            });
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Variant & Photo editor (ADM-4: strictly max 4 photos)
+    function addVariantBlock(data = null) {
+      const idx = variantBlocks.length;
+      const variantObj = data || {
+        id: "colour-" + (idx + 1),
+        label: "Colour " + (idx + 1),
+        swatch: "#F6B3C1",
+        images: [],
+        rawFiles: []
+      };
+      variantBlocks.push(variantObj);
+      renderVariants();
+    }
+
+    function renderVariants() {
+      const container = document.getElementById("variants-container");
+      container.innerHTML = "";
+
+      variantBlocks.forEach((v, vIdx) => {
+        const block = document.createElement("div");
+        block.style.background = "#FFF7F9";
+        block.style.border = "1px solid var(--color-blush)";
+        block.style.borderRadius = "12px";
+        block.style.padding = "1rem";
+        block.style.marginBottom = "1rem";
+
+        block.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong>Colour #${vIdx + 1}</strong>
+            ${variantBlocks.length > 1 ? `<button type="button" style="color: var(--color-alert); font-size: 0.8rem; font-weight: 700;" onclick="removeVariant(${vIdx})">Remove</button>` : ''}
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <div>
+              <label class="form-label">Colour Label *</label>
+              <input type="text" class="form-input" value="${v.label}" onchange="variantBlocks[${vIdx}].label = this.value">
+            </div>
+            <div>
+              <label class="form-label">Colour Swatch</label>
+              <input type="color" class="form-input" style="padding: 2px;" value="${v.swatch || '#F6B3C1'}" onchange="variantBlocks[${vIdx}].swatch = this.value">
+            </div>
+          </div>
+          <div>
+            <label class="form-label">Photos (1 to 4 max, currently ${v.images.length}):</label>
+            <input type="file" accept="image/*" class="form-input" onchange="handlePhotoUpload(event, ${vIdx})" ${v.images.length >= 4 ? 'disabled' : ''}>
+            ${v.images.length >= 4 ? '<small style="color: var(--color-alert); font-weight: 700;">Maximum 4 photos reached for this colour.</small>' : ''}
+            <div class="thumb-grid" id="thumbs-grid-${vIdx}"></div>
+          </div>
+        `;
+
+        const thumbGrid = block.querySelector(`#thumbs-grid-${vIdx}`);
+        v.images.forEach((imgSrc, imgIdx) => {
+          const tBox = document.createElement("div");
+          tBox.className = "thumb-box";
+          tBox.innerHTML = `
+            <img src="${imgSrc}" alt="Photo">
+            <div class="thumb-actions">
+              ${imgIdx !== 0 ? `<button type="button" class="thumb-btn-sm" onclick="makeCoverPhoto(${vIdx}, ${imgIdx})">Cover</button>` : '<span style="color:#FFF; font-size:0.65rem;">Cover</span>'}
+              <button type="button" class="thumb-btn-sm" onclick="removePhoto(${vIdx}, ${imgIdx})">Delete</button>
+            </div>
+          `;
+          thumbGrid.appendChild(tBox);
+        });
+
+        container.appendChild(block);
+      });
+    }
+
+    async function handlePhotoUpload(event, vIdx) {
+      const files = event.target.files;
+      if (!files || files.length === 0) return;
+
+      const v = variantBlocks[vIdx];
+      if (v.images.length >= 4) {
+        alert("Maximum 4 photos per colour variant allowed.");
+        return;
+      }
+
+      showAdminToast("Processing and compressing photo... 🌸");
+      try {
+        const processed = await processImageFile(files[0]);
+        v.images.push(processed.dataUrl);
+        v.rawFiles.push(processed);
+        renderVariants();
+        showAdminToast(`Photo ready! (${(processed.processedSize / 1024).toFixed(0)} KB)`);
+      } catch (err) {
+        alert("Could not process image: " + err.message);
+      }
+    }
+
+    function makeCoverPhoto(vIdx, imgIdx) {
+      const v = variantBlocks[vIdx];
+      const target = v.images.splice(imgIdx, 1)[0];
+      v.images.unshift(target);
+      renderVariants();
+    }
+
+    function removePhoto(vIdx, imgIdx) {
+      variantBlocks[vIdx].images.splice(imgIdx, 1);
+      renderVariants();
+    }
+
+    function removeVariant(vIdx) {
+      variantBlocks.splice(vIdx, 1);
+      renderVariants();
+    }
+
+    // Step 4 Live Preview (ADM-6)
+    function updateLivePreview() {
+      const title = document.getElementById("prod-title").value || "Sample Bloom";
+      const price = document.getElementById("prod-price").value || 199;
+      const sale = document.getElementById("prod-saleprice").value;
+      const desc = document.getElementById("prod-desc").value || "Hand-twisted bloom description.";
+      const cover = (variantBlocks[0] && variantBlocks[0].images[0]) || "";
+
+      document.getElementById("preview-card-wrap").innerHTML = `
+        <article class="card" style="padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; background: var(--color-blush); margin-bottom: 0.75rem;">
+            <img src="${cover}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-family: 'Fredoka', cursive; font-size: 1.1rem; color: var(--color-ink);">${title}</h3>
+          <div style="font-weight: 800; color: var(--color-deep-rose); font-size: 1.1rem; margin: 0.25rem 0;">₹${sale || price} ${sale ? `<span style="font-size: 0.8rem; text-decoration: line-through; color: var(--color-muted);">₹${price}</span>` : ''}</div>
+          <p style="font-size: 0.85rem; color: var(--color-muted);">${desc}</p>
+        </article>
+      `;
+    }
+
+    // Publish to GitHub REST API (ADM-7)
+    async function publishProduct() {
+      const btn = document.getElementById("publish-btn");
+      const prog = document.getElementById("publish-progress");
+      const stat = document.getElementById("publish-status-text");
+
+      btn.disabled = true;
+      prog.style.display = "block";
+      stat.textContent = "Uploading variant photos to GitHub repository...";
+
+      const prodId = document.getElementById("prod-id").value.trim();
+      const title = document.getElementById("prod-title").value.trim();
+      const price = Number(document.getElementById("prod-price").value);
+      const salePrice = document.getElementById("prod-saleprice").value ? Number(document.getElementById("prod-saleprice").value) : null;
+      const category = document.getElementById("prod-cat").value;
+      const description = document.getElementById("prod-desc").value.trim();
+      const details = document.getElementById("prod-details").value.split("\n").map(l => l.trim()).filter(Boolean);
+      const status = document.getElementById("prod-status").value;
+      const leadTimeDays = Number(document.getElementById("prod-leadtime").value) || 2;
+      const badge = document.getElementById("prod-badge").value || null;
+      const featured = document.getElementById("prod-featured").checked;
+      const hidden = document.getElementById("prod-hidden").checked;
+
+      try {
+        // Upload each raw photo to images/products/<prodId>/<variantId>-<idx>.webp
+        for (let vIdx = 0; vIdx < variantBlocks.length; vIdx++) {
+          const v = variantBlocks[vIdx];
+          const uploadedPaths = [];
+
+          for (let pIdx = 0; pIdx < v.images.length; pIdx++) {
+            const dataUrl = v.images[pIdx];
+            if (dataUrl.startsWith("data:")) {
+              const base64 = dataUrl.split(",")[1];
+              const filePath = `images/products/${prodId}/${v.id || 'var'}-${pIdx + 1}.webp`;
+              stat.textContent = `Uploading photo ${filePath}...`;
+
+              // Check existing SHA
+              let existingSha = null;
+              try {
+                const checkRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${filePath}`, {
+                  headers: { "Authorization": `token ${githubToken}` }
+                });
+                if (checkRes.ok) {
+                  const checkData = await checkRes.json();
+                  existingSha = checkData.sha;
+                }
+              } catch (e) {}
+
+              const putRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${filePath}`, {
+                method: "PUT",
+                headers: {
+                  "Authorization": `token ${githubToken}`,
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                  message: `Upload photo ${filePath} via Ash Flora Admin`,
+                  content: base64,
+                  sha: existingSha || undefined
+                })
+              });
+
+              if (!putRes.ok) throw new Error(`Could not upload photo ${filePath}`);
+              uploadedPaths.push(filePath);
+            } else {
+              uploadedPaths.push(dataUrl);
+            }
+          }
+          v.images = uploadedPaths;
+        }
+
+        // Fetch current data/products.json and create backup
+        stat.textContent = "Updating data/products.json and creating backup...";
+        const prodFileRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/products.json`, {
+          headers: { "Authorization": `token ${githubToken}` }
+        });
+        const prodFileData = await prodFileRes.json();
+        const currentArr = JSON.parse(decodeURIComponent(escape(atob(prodFileData.content))));
+
+        // Create backup
+        const timestamp = new Date().toISOString().replace(/[-:T]/g, "").slice(0, 12);
+        await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/backups/products-${timestamp}.json`, {
+          method: "PUT",
+          headers: { "Authorization": `token ${githubToken}`, "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: `Backup products before adding ${prodId}`,
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(currentArr, null, 2))))
+          })
+        });
+
+        // Assemble product item
+        const newProduct = {
+          id: prodId,
+          name: title,
+          category,
+          price,
+          salePrice,
+          description,
+          details,
+          badge,
+          status,
+          leadTimeDays,
+          createdAt: new Date().toISOString().slice(0, 10),
+          featured,
+          occasions: ["Birthday", "Anniversary"],
+          hidden,
+          variants: variantBlocks.map(v => ({
+            id: v.id || "var-1",
+            label: v.label,
+            swatch: v.swatch,
+            images: v.images,
+            status: status
+          }))
+        };
+
+        const existingIdx = currentArr.findIndex(p => p.id === prodId);
+        if (existingIdx !== -1) {
+          currentArr[existingIdx] = newProduct;
+        } else {
+          currentArr.unshift(newProduct);
+        }
+
+        // Commit updated data/products.json
+        const updateRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/products.json`, {
+          method: "PUT",
+          headers: { "Authorization": `token ${githubToken}`, "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: `Publish product ${prodId} via Ash Flora Admin`,
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(currentArr, null, 2)))),
+            sha: prodFileData.sha
+          })
+        });
+
+        if (!updateRes.ok) throw new Error("Could not update data/products.json");
+
+        stat.textContent = "✅ Published! Live on your website in about 1 to 2 minutes.";
+        showAdminToast("Product successfully published! 🌸");
+        setTimeout(() => { switchTab("products"); }, 2000);
+
+      } catch (err) {
+        alert("Publish failed: " + err.message);
+        stat.textContent = "Error: " + err.message;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    // Toggle In Stock / Sold Out (ADM-3)
+    async function toggleSoldOut(idx) {
+      const p = liveProducts[idx];
+      p.status = p.status === "sold-out" ? "in-stock" : "sold-out";
+      await saveEntireCatalogue(`Toggle status for ${p.id}`);
+      renderAdminProductsList(liveProducts);
+    }
+
+    // Toggle Hide / Show (ADM-3)
+    async function toggleHide(idx) {
+      const p = liveProducts[idx];
+      p.hidden = !p.hidden;
+      await saveEntireCatalogue(`Toggle hide for ${p.id}`);
+      renderAdminProductsList(liveProducts);
+    }
+
+    // Duplicate product (ADM-3)
+    function duplicateProduct(idx) {
+      const original = liveProducts[idx];
+      const copy = JSON.parse(JSON.stringify(original));
+      copy.id = `${copy.id}-copy`;
+      copy.name = `${copy.name} (Copy)`;
+      editProductWithData(copy);
+    }
+
+    function editProduct(idx) {
+      editProductWithData(liveProducts[idx]);
+    }
+
+    function editProductWithData(p) {
+      document.getElementById("prod-title").value = p.name;
+      document.getElementById("prod-id").value = p.id;
+      document.getElementById("prod-price").value = p.price;
+      document.getElementById("prod-saleprice").value = p.salePrice || "";
+      document.getElementById("prod-cat").value = p.category;
+      document.getElementById("prod-desc").value = p.description;
+      document.getElementById("prod-details").value = (p.details || []).join("\n");
+      document.getElementById("prod-status").value = p.status || "in-stock";
+      document.getElementById("prod-leadtime").value = p.leadTimeDays || 2;
+      document.getElementById("prod-badge").value = p.badge || "";
+      document.getElementById("prod-featured").checked = Boolean(p.featured);
+      document.getElementById("prod-hidden").checked = Boolean(p.hidden);
+
+      variantBlocks = JSON.parse(JSON.stringify(p.variants || []));
+      variantBlocks.forEach(v => { v.rawFiles = []; });
+      renderVariants();
+      switchTab("add-product");
+      goToStep(1);
+    }
+
+    async function saveEntireCatalogue(commitMsg) {
+      try {
+        const prodFileRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/products.json`, {
+          headers: { "Authorization": `token ${githubToken}` }
+        });
+        const prodFileData = await prodFileRes.json();
+
+        await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/products.json`, {
+          method: "PUT",
+          headers: { "Authorization": `token ${githubToken}`, "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: commitMsg,
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(liveProducts, null, 2)))),
+            sha: prodFileData.sha
+          })
+        });
+        showAdminToast("Catalogue updated on GitHub! 🌸");
+      } catch (err) {
+        alert("Failed to update catalogue: " + err.message);
+      }
+    }
+
+    // Store Settings Loader & Saver (Section 19.3)
+    async function loadAdminSettings() {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/settings.json`, {
+          headers: { "Authorization": `token ${githubToken}` }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const settings = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+          document.getElementById("set-whatsapp").value = settings.whatsappNumber || "";
+          document.getElementById("set-instagram").value = settings.instagramHandle || "";
+          document.getElementById("set-reviewform").value = settings.reviewFormUrl || "";
+          document.getElementById("set-announcement").value = settings.announcement || "";
+          document.getElementById("set-orders-open").checked = settings.ordersOpen !== false;
+          document.getElementById("set-closed-msg").value = settings.closedMessage || "";
+          document.getElementById("set-giftwrap").value = settings.giftWrapPrice || 49;
+          document.getElementById("set-deliverynote").value = settings.deliveryNote || "";
+        }
+      } catch (e) {}
+    }
+
+    document.getElementById("settings-form").onsubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const res = await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/settings.json`, {
+          headers: { "Authorization": `token ${githubToken}` }
+        });
+        const currentData = await res.json();
+        const settings = JSON.parse(decodeURIComponent(escape(atob(currentData.content))));
+
+        settings.whatsappNumber = document.getElementById("set-whatsapp").value.trim();
+        settings.instagramHandle = document.getElementById("set-instagram").value.trim();
+        settings.reviewFormUrl = document.getElementById("set-reviewform").value.trim();
+        settings.announcement = document.getElementById("set-announcement").value.trim();
+        settings.ordersOpen = document.getElementById("set-orders-open").checked;
+        settings.closedMessage = document.getElementById("set-closed-msg").value.trim();
+        settings.giftWrapPrice = Number(document.getElementById("set-giftwrap").value);
+        settings.deliveryNote = document.getElementById("set-deliverynote").value.trim();
+
+        await fetch(`https://api.github.com/repos/${githubRepo}/contents/data/settings.json`, {
+          method: "PUT",
+          headers: { "Authorization": `token ${githubToken}`, "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: "Update store settings via Ash Flora Admin",
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(settings, null, 2)))),
+            sha: currentData.sha
+          })
+        });
+        showAdminToast("Store settings saved and published! 🌸");
+      } catch (err) {
+        alert("Failed to save settings: " + err.message);
+      }
+    };
+
+    // Catalogue Validation Check (ADM-8)
+    function runCatalogueCheck() {
+      const report = document.getElementById("validation-report");
+      if (typeof validateCatalogue !== "function") {
+        report.textContent = "Catalogue validator not loaded.";
+        return;
+      }
+      const { validProducts, errors } = validateCatalogue(liveProducts, true);
+      if (errors.length === 0) {
+        report.textContent = `✅ All ${validProducts.length} catalogue items are valid and healthy! No errors found.`;
+        report.style.color = "var(--color-success)";
+      } else {
+        report.textContent = `⚠️ Found ${errors.length} issue(s) in catalogue:\n\n${errors.join("\n")}`;
+        report.style.color = "var(--color-alert)";
+      }
+    }
+
+    // Auto-init
+    initAdmin();
+    // Start with 1 empty variant block if adding fresh
+    addVariantBlock();
+  </script>
+</body>
+</html>

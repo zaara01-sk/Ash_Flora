@@ -1,0 +1,22 @@
+{
+  "whatsappNumber": "919876543210",
+  "instagramHandle": "ashflora.pune",
+  "reviewFormUrl": "",
+  "announcement": "🌸 Handmade pipe cleaner blooms in Pune · Local delivery & pickup available",
+  "ordersOpen": true,
+  "closedMessage": "We are temporarily pausing new orders to fulfill ongoing handcrafted requests. The shop is still browsable!",
+  "giftWrapPrice": 49,
+  "occasions": [
+    "Birthday",
+    "Anniversary",
+    "Valentine's",
+    "Raksha Bandhan",
+    "Diwali",
+    "Wedding",
+    "Home decor"
+  ],
+  "policyVersion": "v1.0",
+  "policyText": "Strictly no refunds, no returns, no exchanges. Every Ash Flora piece is handmade for you, so all sales are final. This applies to change of mind, colour or size preference, and ordering the wrong item. Please check photos, colours and details before you order. Handmade items can differ slightly from photos, and screens show colours differently.\n\nCustom orders: The 50% advance is non-refundable. A custom order cannot be cancelled once we have started making it.\n\nCancellations: A ready-made order can be cancelled only before the owner replies Confirmed on WhatsApp.\n\nDamaged or wrong item: If your order arrives damaged or different from what you ordered, message us on WhatsApp within 24 hours with clear photos or an unboxing video and your invoice number. We will repair or replace the item at our discretion. We do not give refunds in cash or by UPI.",
+  "damageClauseEnabled": true,
+  "deliveryNote": "We deliver within Pune only. Delivery charge is confirmed on WhatsApp."
+}

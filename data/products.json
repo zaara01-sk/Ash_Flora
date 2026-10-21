@@ -1,0 +1,132 @@
+[
+  {
+    "id": "tulip-stem",
+    "name": "Fuzzy Tulip Stem [Sample]",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": 179,
+    "description": "Soft, velvety hand-twisted pipe cleaner tulip that never wilts. Perfect for vases or gifting.",
+    "details": [
+      "Height: approx 28-30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-18",
+    "featured": true,
+    "occasions": ["Birthday", "Anniversary", "Home decor", "Valentine's"],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pink",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": ["images/products/sample-tulip/pink-1.jpg"],
+        "status": "in-stock"
+      },
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": ["images/products/sample-tulip/yellow-1.jpg"],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "bloombud-keyring",
+    "name": "BloomBud Blossom Keyring [Sample]",
+    "category": "keychains",
+    "price": 149,
+    "description": "Adorable miniature fuzzy flower bud that clips right onto your keys, bags, or backpacks.",
+    "details": [
+      "Size: approx 6 cm blossom + 4 cm chain",
+      "Includes sturdy rose-gold tone lobster clasp",
+      "Lightweight, fuzzy, and durable",
+      "Handcrafted in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 1,
+    "createdAt": "2026-10-10",
+    "featured": true,
+    "occasions": ["Birthday", "Raksha Bandhan", "Home decor"],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "blossom",
+        "label": "Blush Blossom",
+        "swatch": "#F08BA5",
+        "images": ["images/products/sample-keyring/blossom-1.jpg"],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "pastel-bouquet",
+    "name": "Pastel Dream Wrapped Bouquet [Sample]",
+    "category": "bouquets",
+    "price": 499,
+    "description": "A signature multi-flower bouquet hand-tied with elegant satin ribbons and craft wrapping paper.",
+    "details": [
+      "Includes 5-6 handcrafted blooms and foliage stems",
+      "Arrives fully wrapped in luxury matte paper with satin ribbon",
+      "Everlasting keepsake gift",
+      "Handcrafted in Pune"
+    ],
+    "badge": "Limited",
+    "status": "made-to-order",
+    "leadTimeDays": 3,
+    "createdAt": "2026-10-15",
+    "featured": true,
+    "occasions": ["Birthday", "Anniversary", "Wedding", "Valentine's"],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pastel",
+        "label": "Pastel Bliss",
+        "swatch": "#FBD5DF",
+        "images": ["images/products/sample-bouquet/pastel-1.jpg"],
+        "status": "made-to-order"
+      },
+      {
+        "id": "lavender",
+        "label": "Calm Lavender",
+        "swatch": "#C5A3CF",
+        "images": ["images/products/sample-bouquet/lavender-1.jpg"],
+        "status": "made-to-order"
+      }
+    ]
+  },
+  {
+    "id": "moss-log-garden",
+    "name": "Enchanted Moss Log Garden [Sample]",
+    "category": "log-gardens",
+    "price": 399,
+    "description": "Miniature woodland fantasy featuring colourful fuzzy blooms nestled in faux moss on a wooden log.",
+    "details": [
+      "Base: Hand-finished wooden log approx 14 cm length",
+      "Blooms: 4 sculpted pipe cleaner buds with preserved moss",
+      "Stands independently on any shelf or table",
+      "Handcrafted in Pune"
+    ],
+    "status": "made-to-order",
+    "leadTimeDays": 4,
+    "createdAt": "2026-10-19",
+    "featured": true,
+    "occasions": ["Home decor", "Anniversary", "Diwali"],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "forest",
+        "label": "Forest Flora",
+        "swatch": "#88B04B",
+        "images": ["images/products/sample-log-garden/moss-1.jpg"],
+        "status": "made-to-order"
+      }
+    ]
+  }
+]

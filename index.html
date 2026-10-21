@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ash Flora — Handmade Pipe Cleaner Flowers in Pune</title>
+  <meta name="description" content="Handcrafted pipe cleaner flowers, bouquets, keychains and log gardens in Pune. Velvety, everlasting blooms made with love. Order with our simple cart & WhatsApp bill.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- Open Graph / Social Sharing (Section 17.2) -->
+  <meta property="og:title" content="Ash Flora — Handmade Pipe Cleaner Flowers in Pune">
+  <meta property="og:description" content="Hand-twisted everlasting blooms, bouquets, keychains and log gardens. Browse catalog and order on WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/products/sample-tulip/pink-1.jpg">
+
+  <!-- Google Fonts: Fredoka 600, Nunito 400/600/700, Caveat (Section 16.3) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Fuzzy Petals (Section 16.5) -->
+  <div id="petals-container" class="petals-container" aria-hidden="true"></div>
+
+  <!-- Announcement Bar (Section 17.1) -->
+  <div id="announcement-bar" class="announcement-bar">
+    🌸 Handmade pipe cleaner blooms in Pune · Exclusively local delivery & pickup
+  </div>
+
+  <!-- Sticky Navigation (Section 17.1) -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="#" class="brand-link" aria-label="Ash Flora Home">
+        <span class="brand-logo-text">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="#C94F78"/>
+            <circle cx="12" cy="5" r="3.5" fill="#F08BA5"/>
+            <circle cx="19" cy="12" r="3.5" fill="#F08BA5"/>
+            <circle cx="12" cy="19" r="3.5" fill="#F08BA5"/>
+            <circle cx="5" cy="12" r="3.5" fill="#F08BA5"/>
+          </svg>
+          Ash Flora
+        </span>
+        <span class="brand-tag">· Pune</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Primary Navigation">
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#gifting" class="nav-link">Gifting</a></li>
+          <li><a href="#reviews" class="nav-link">Love Notes</a></li>
+          <li><a href="#custom" class="nav-link">Custom</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#policy" class="nav-link">Policy</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Action & Hamburger -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-outline" id="reopen-last-bill-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.8rem;" aria-label="View last bill">
+          🧾 Last Bill
+        </button>
+
+        <button type="button" class="cart-nav-btn cart-open-btn" aria-label="View Cart">
+          <span>🛍️</span>
+          <span class="cart-badge cart-count-badge">0</span>
+        </button>
+
+        <button type="button" id="mobile-menu-toggle" class="mobile-nav-toggle" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Banner (Section 17.1) -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-pill">
+          <span>🌸</span> Handcrafted with love in Pune
+        </div>
+        <h1 class="hero-title">Flowers that never wilt,<br>made by hand in Pune</h1>
+        <p class="hero-sub">Hand-twisted plush pipe cleaner flowers, bouquets, keychains & log gardens. Soft, vibrant, and made uniquely for you.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-primary">Shop Blooms</a>
+          <a href="https://wa.me/919876543210?text=Hi%20Ash%20Flora!%20I'd%20like%20to%20order%20handcrafted%20flowers." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+        </div>
+        <div class="hero-microcopy">
+          <span>✨ Handmade in Pune</span>
+          <span>🚚 Delivery & Pickup</span>
+          <span>💳 Pay by UPI or Cash</span>
+        </div>
+
+        <!-- Parallax Hero Frame (Section 16.5) -->
+        <div class="hero-visual-frame" aria-hidden="true">
+          <img src="images/products/sample-tulip/pink-1.jpg" alt="Handcrafted pipe cleaner tulips in Pune" class="hero-visual-img" width="600" height="450" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip (Section 17.1) -->
+    <section class="trust-strip" aria-label="Trust highlights">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">✂️</div>
+          <div>
+            <div class="trust-title">Handmade in Pune</div>
+            <div class="trust-sub">Crafted one petal at a time</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">📍</div>
+          <div>
+            <div class="trust-title">Delivery & Pickup</div>
+            <div class="trust-sub">Pune local courier & pickup</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💵</div>
+          <div>
+            <div class="trust-title">Pay by UPI or Cash</div>
+            <div class="trust-sub">After order confirmation</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🌿</div>
+          <div>
+            <div class="trust-title">Never Wilts</div>
+            <div class="trust-sub">Everlasting plush chenille</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Tiles (Section 17.1) -->
+    <section class="category-tiles-section" aria-label="Product categories">
+      <div class="container">
+        <div class="category-tiles-grid">
+          <a href="#keychains" class="category-tile">
+            <div class="category-tile-icon">🔑</div>
+            <div class="category-tile-title">Keychains</div>
+            <div class="category-tile-count" data-category-count="keychains">Loading...</div>
+          </a>
+          <a href="#single-flowers" class="category-tile">
+            <div class="category-tile-icon">🌷</div>
+            <div class="category-tile-title">Single Flowers</div>
+            <div class="category-tile-count" data-category-count="single-flowers">Loading...</div>
+          </a>
+          <a href="#bouquets" class="category-tile">
+            <div class="category-tile-icon">💐</div>
+            <div class="category-tile-title">Bouquets</div>
+            <div class="category-tile-count" data-category-count="bouquets">Loading...</div>
+          </a>
+          <a href="#log-gardens" class="category-tile">
+            <div class="category-tile-icon">🪵</div>
+            <div class="category-tile-title">Log Gardens</div>
+            <div class="category-tile-count" data-category-count="log-gardens">Loading...</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Row (Section 17.1) -->
+    <section id="featured-section" class="featured-section" style="display: none;">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Featured Blooms</h2>
+          <p class="section-subtitle">our most loved hand-twisted creations</p>
+        </header>
+        <div id="featured-grid" class="products-grid"></div>
+      </div>
+    </section>
+
+    <!-- Shop Catalogue Section (Section 15.5 & 17.1) -->
+    <section id="shop" class="shop-section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">The Flower Shop</h2>
+          <p class="section-subtitle">find your forever blooms</p>
+        </header>
+
+        <!-- Category Tabs & Occasions Filters -->
+        <div class="shop-filters-wrap">
+          <div class="category-tabs-bar" role="tablist">
+            <button type="button" class="category-tab-btn is-active" data-category="all">All Blooms</button>
+            <button type="button" class="category-tab-btn" data-category="keychains">Keychains</button>
+            <button type="button" class="category-tab-btn" data-category="single-flowers">Single Flowers</button>
+            <button type="button" class="category-tab-btn" data-category="bouquets">Bouquets</button>
+            <button type="button" class="category-tab-btn" data-category="log-gardens">Log Gardens</button>
+          </div>
+
+          <div class="occasions-chips-bar" role="toolbar" aria-label="Filter by occasion">
+            <button type="button" class="occasion-chip is-active" data-occasion="all">All Occasions</button>
+            <button type="button" class="occasion-chip" data-occasion="Birthday">Birthday</button>
+            <button type="button" class="occasion-chip" data-occasion="Anniversary">Anniversary</button>
+            <button type="button" class="occasion-chip" data-occasion="Valentine's">Valentine's</button>
+            <button type="button" class="occasion-chip" data-occasion="Raksha Bandhan">Raksha Bandhan</button>
+            <button type="button" class="occasion-chip" data-occasion="Diwali">Diwali</button>
+            <button type="button" class="occasion-chip" data-occasion="Home decor">Home Decor</button>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" class="products-grid"></div>
+      </div>
+    </section>
+
+    <!-- How Ordering Works (Section 17.1) -->
+    <section id="how-it-works" class="shop-section" style="background: #FFFFFF; border-top: 1px solid var(--color-blush); border-bottom: 1px solid var(--color-blush);">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">How Ordering Works</h2>
+          <p class="section-subtitle">four simple steps from browsing to blooms</p>
+        </header>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon">🌸</div>
+            <h3 class="step-title">Pick Your Flowers</h3>
+            <p class="step-desc">Choose your favourite designs, pick your colours, and add them to your cart.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon">🧾</div>
+            <h3 class="step-title">Get Your Bill</h3>
+            <p class="step-desc">Fill your name and Pune details. Click "Generate my bill" to view your numbered order bill.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon">📲</div>
+            <h3 class="step-title">Send on WhatsApp</h3>
+            <p class="step-desc">Forward the bill to Zaara on WhatsApp in one tap. We confirm availability & lead time.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-icon">🎁</div>
+            <h3 class="step-title">Pay & Receive</h3>
+            <p class="step-desc">Pay via UPI QR (shared privately) or cash upon delivery/pickup in Pune.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gifting Section (Section 17.1) -->
+    <section id="gifting" class="shop-section">
+      <div class="container">
+        <div class="gifting-card">
+          <div>
+            <h2 class="section-title" style="text-align: left;">Make It a Thoughtful Gift</h2>
+            <p style="color: var(--color-ink); margin-bottom: 1rem; font-size: 1.05rem;">
+              Fresh flowers fade in days. Ash Flora blooms are forever keepsakes that brighten work desks, bedside tables, and bookshelves for years.
+            </p>
+            <p style="color: var(--color-muted-ink); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              Choose our signature gift wrap (+₹49) at checkout for luxury matte paper wrapping, satin ribbons, and a handwritten floral gift note.
+            </p>
+            <a href="#shop" class="btn btn-primary">Find a Gift Bloom</a>
+          </div>
+          <div style="background: var(--color-blush); border-radius: var(--radius-inner); padding: 1.75rem; text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎀</div>
+            <h3 style="font-family: var(--font-heading); color: var(--color-deep-rose); font-size: 1.25rem;">Gift Wrap & Note</h3>
+            <p style="font-size: 0.85rem; color: var(--color-muted-ink); margin-top: 0.4rem;">
+              Add your personalised message during checkout and it will appear directly on your order bill.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Love Notes Reviews Section (Section 1 to 13) -->
+    <section id="reviews" class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="reviews-heading" class="section-title">Love Notes</h2>
+          <p class="section-subtitle">words from our flower friends</p>
+        </header>
+
+        <div id="reviews-header-actions"></div>
+        <div id="reviews-empty-container" class="ln-empty-container" style="display: none;"></div>
+        <div id="reviews-summary-container" class="ln-summary-container" style="display: none;"></div>
+        <div id="reviews-filter-container" class="ln-filter-container" role="toolbar" aria-label="Review category filters" style="display: none;"></div>
+        <div id="reviews-list-container" style="display: none;"></div>
+        <div id="reviews-loadmore-container" style="display: none;"></div>
+        <div id="reviews-screenshot-container" class="ln-screens-container" style="display: none;"></div>
+      </div>
+    </section>
+
+    <!-- Custom Orders Section (Section 17.1) -->
+    <section id="custom" class="shop-section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Custom Floral Orders</h2>
+          <p class="section-subtitle">got a dream bouquet or character in mind?</p>
+        </header>
+
+        <div class="custom-order-box">
+          <p style="font-size: 0.95rem; color: var(--color-ink); margin-bottom: 1.25rem; line-height: 1.6;">
+            We love bringing unique pipe cleaner visions to life! Whether it's an anime-inspired spider lily, a custom pastel bouquet with your favourite colours, or a miniature garden for someone special.
+          </p>
+          <div style="background: #FFF0F4; border: 1px solid var(--color-rose); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--color-deep-rose); margin-bottom: 1.25rem; font-weight: 600;">
+            ⚠️ Custom Orders Policy: A 50% non-refundable advance is required via UPI once we confirm design & pricing. Custom orders cannot be cancelled once crafting begins.
+          </div>
+          <form id="custom-order-form">
+            <div class="form-group">
+              <label for="custom-desc" class="form-label">Describe your dream flower piece:</label>
+              <textarea id="custom-desc" class="form-textarea" rows="3" placeholder="e.g. 5 purple tulips with 2 baby sunflowers, or an anime flower keychain" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp" style="width: 100%;">Chat on WhatsApp for Custom Order</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care Guide (Section 17.1) -->
+    <section class="shop-section" style="background: #FFFFFF; border-top: 1px solid var(--color-blush); border-bottom: 1px solid var(--color-blush);">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Flower Care Guide</h2>
+          <p class="section-subtitle">how to keep your blooms fuzzy forever</p>
+        </header>
+        <div class="care-grid">
+          <div class="care-card">
+            <div class="care-icon">💧</div>
+            <div>
+              <h3 style="font-family: var(--font-heading); color: var(--color-deep-rose); font-size: 1.1rem;">Keep Them Dry</h3>
+              <p style="font-size: 0.85rem; color: var(--color-muted-ink); margin-top: 0.25rem;">Pipe cleaner flowers do not need water! Keep them away from moisture and spills to preserve shape.</p>
+            </div>
+          </div>
+          <div class="care-card">
+            <div class="care-icon">🖌️</div>
+            <div>
+              <h3 style="font-family: var(--font-heading); color: var(--color-deep-rose); font-size: 1.1rem;">Gentle Dusting</h3>
+              <p style="font-size: 0.85rem; color: var(--color-muted-ink); margin-top: 0.25rem;">Use a soft makeup brush or gentle hairdryer on cool setting to whisk away any dust.</p>
+            </div>
+          </div>
+          <div class="care-card">
+            <div class="care-icon">☀️</div>
+            <div>
+              <h3 style="font-family: var(--font-heading); color: var(--color-deep-rose); font-size: 1.1rem;">Avoid Harsh Sunlight</h3>
+              <p style="font-size: 0.85rem; color: var(--color-muted-ink); margin-top: 0.25rem;">Display indoors away from harsh direct midday sunlight to keep the vibrant chenille colours rich.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Section 17.1) -->
+    <section id="about" class="shop-section">
+      <div class="container">
+        <div class="about-card">
+          <header class="section-head">
+            <h2 class="section-title">About Ash Flora</h2>
+            <p class="section-subtitle">the heart behind the blooms</p>
+          </header>
+          <p style="font-size: 1.1rem; color: var(--color-ink); line-height: 1.8; margin-bottom: 1.25rem;">
+            Ash Flora was born out of a love for tactile, everlasting art in Pune. Every single stem, petal, and miniature log garden is carefully hand-sculpted using premium plush chenille pipe cleaners.
+          </p>
+          <p style="font-size: 1.05rem; font-weight: 700; color: var(--color-deep-rose); font-family: var(--font-accent); font-size: 1.6rem;">
+            "Every piece is hand-twisted, one fuzzy petal at a time."
+          </p>
+          <p style="font-size: 0.95rem; color: var(--color-muted-ink); margin-top: 0.75rem;">
+            No watering, no wilting — just soft fuzzy joy delivered directly to your doorstep in Pune.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (Section 17.1) -->
+    <section id="faq" class="shop-section" style="background: #FFFFFF; border-top: 1px solid var(--color-blush); border-bottom: 1px solid var(--color-blush);">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">everything you need to know</p>
+        </header>
+
+        <div class="faq-wrap">
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Do you deliver all over Pune?</span>
+              <span>▾</span>
+            </button>
+            <div class="faq-answer">
+              Yes! We deliver across Pune via local courier or self-delivery. Pickup is also available by prior arrangement. The delivery fee is confirmed with you on WhatsApp based on your area before payment.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>How do I pay for my order?</span>
+              <span>▾</span>
+            </button>
+            <div class="faq-answer">
+              After you generate your bill on the site, send it to us on WhatsApp. Once we confirm availability and delivery fee, we share our official UPI QR privately, or you can choose cash on delivery/pickup for ready-stock items.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Can I return an item or get a refund?</span>
+              <span>▾</span>
+            </button>
+            <div class="faq-answer">
+              No. Every piece is handmade for you, so all sales are final. If something arrives damaged, please message us within 24 hours with photos or an unboxing video and your invoice number, and we will repair or replace it at our discretion.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>How long does a made-to-order piece take?</span>
+              <span>▾</span>
+            </button>
+            <div class="faq-answer">
+              Made-to-order pieces typically take between 2 to 4 days to handcraft before dispatch. Exact lead times are shown on each product card and confirmed on WhatsApp.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policy Section (Section 18.1) -->
+    <section id="policy" class="policy-section">
+      <div class="container">
+        <div class="policy-card">
+          <header class="section-head">
+            <h2 class="section-title">Store Policies</h2>
+            <p class="section-subtitle">clear, honest, and transparent</p>
+          </header>
+
+          <div class="policy-block">
+            <h3 class="policy-block-title">No Refund Policy v1.0</h3>
+            <p class="policy-block-text">
+              <strong>Strictly no refunds, no returns, no exchanges.</strong> Every Ash Flora piece is handmade for you, so all sales are final. This applies to change of mind, colour or size preference, and ordering the wrong item. Please check photos, colours and details before you order. Handmade items can differ slightly from photos, and screens show colours differently.
+            </p>
+          </div>
+
+          <div class="policy-block">
+            <h3 class="policy-block-title">Custom Orders</h3>
+            <p class="policy-block-text">
+              The 50% advance for custom orders is non-refundable. A custom order cannot be cancelled once we have started making it.
+            </p>
+          </div>
+
+          <div class="policy-block">
+            <h3 class="policy-block-title">Cancellations</h3>
+            <p class="policy-block-text">
+              A ready-made order can be cancelled only before the owner replies "Confirmed" on WhatsApp.
+            </p>
+          </div>
+
+          <div class="policy-block">
+            <h3 class="policy-block-title">Damaged or Wrong Item</h3>
+            <p class="policy-block-text">
+              If your order arrives damaged or different from what you ordered, message us on WhatsApp within 24 hours with clear photos or an unboxing video and your invoice number. We will repair or replace the item at our discretion. We do not give refunds in cash or by UPI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer (Section 17.1) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo-text" style="color: var(--color-deep-rose);">🌸 Ash Flora</span>
+        <p class="footer-copy">Handmade pipe cleaner wonders · Pune, Maharashtra</p>
+      </div>
+      <nav aria-label="Footer Navigation">
+        <ul class="footer-nav">
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#reviews" class="nav-link">Love Notes</a></li>
+          <li><a href="#custom" class="nav-link">Custom</a></li>
+          <li><a href="#policy" class="nav-link">Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Bottom Bar (Section 17.1) -->
+  <div id="mobile-bottom-bar" class="mobile-bottom-bar" aria-label="Cart Quick Bar">
+    <div>
+      <span style="font-size: 0.75rem; color: var(--color-muted-ink); font-weight: 700; text-transform: uppercase;">Estimated Total</span>
+      <div id="mobile-bar-total" style="font-size: 1.15rem; font-weight: 800; color: var(--color-deep-rose);">₹0</div>
+    </div>
+    <button type="button" class="btn btn-primary cart-open-btn" style="padding: 0.5rem 1.25rem;">View Cart 🛍️</button>
+  </div>
+
+  <!-- Floating WhatsApp Button (Section 17.1) -->
+  <a href="https://wa.me/919876543210?text=Hi%20Ash%20Flora!%20I%20have%20an%20inquiry%20about%20your%20handmade%20flowers." class="floating-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ash Flora on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z"/></svg>
+  </a>
+
+  <!-- Cart Drawer (Section 15.6) -->
+  <div id="cart-drawer-backdrop" class="cart-drawer-backdrop"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">🌸 Your Flower Cart</h2>
+      <button type="button" id="cart-close-btn" class="modal-close-btn" style="position: static;" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cart-items-list" class="cart-items-list"></div>
+
+    <div id="cart-footer" class="cart-drawer-footer" style="display: none;">
+      <label class="form-checkbox-label" style="margin-bottom: 0.4rem;">
+        <input type="checkbox" id="cart-giftwrap-checkbox" class="form-checkbox">
+        <span>Add Luxury Gift Wrap & Satin Ribbon (+₹49)</span>
+      </label>
+
+      <div class="cart-summary-line">
+        <span>Items Subtotal:</span>
+        <strong id="cart-subtotal">₹0</strong>
+      </div>
+      <div id="cart-giftwrap-line" class="cart-summary-line" style="display: none;">
+        <span>Gift Wrap:</span>
+        <strong id="cart-giftwrap-val">₹49</strong>
+      </div>
+      <div class="cart-summary-line" style="font-size: 0.8rem; color: var(--color-muted-ink);">
+        <span>Delivery:</span>
+        <em>Confirmed on WhatsApp (Pune only)</em>
+      </div>
+      <div class="cart-summary-line total-line">
+        <span>Estimated Total:</span>
+        <span id="cart-total">₹0</span>
+      </div>
+
+      <div id="cart-orders-closed-msg" class="cart-notice-box" style="display: none;"></div>
+
+      <button type="button" id="cart-checkout-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal (Section 15.6) -->
+  <div id="checkout-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card" style="max-width: 540px;">
+      <button type="button" id="checkout-close-btn" class="modal-close-btn" aria-label="Close checkout">✕</button>
+      <h2 style="font-family: var(--font-heading); color: var(--color-deep-rose); font-size: 1.5rem; margin-bottom: 0.5rem;">Checkout & Bill Details</h2>
+      <p style="font-size: 0.85rem; color: var(--color-muted-ink); margin-bottom: 1.25rem;">
+        We deliver within Pune only. No payment is taken now. Your bill will be created instantly to send on WhatsApp.
+      </p>
+
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="checkout-name" class="form-label">Full Name *</label>
+          <input type="text" id="checkout-name" class="form-input" placeholder="e.g. Riya Deshmukh" required>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-mobile" class="form-label">WhatsApp Mobile Number (10 digits) *</label>
+          <input type="tel" id="checkout-mobile" class="form-input" placeholder="e.g. 9876543210" pattern="[6-9][0-9]{9}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-fulfilment" class="form-label">Fulfilment Type *</label>
+          <select id="checkout-fulfilment" class="form-select">
+            <option value="delivery">Pune Delivery</option>
+            <option value="pickup">Pickup in Pune</option>
+          </select>
+        </div>
+
+        <div id="delivery-fields-group">
+          <div class="form-group">
+            <label for="checkout-area" class="form-label">Area in Pune *</label>
+            <input type="text" id="checkout-area" class="form-input" placeholder="e.g. Kothrud, Baner, Viman Nagar">
+          </div>
+          <div class="form-group">
+            <label for="checkout-address" class="form-label">Full Delivery Address *</label>
+            <textarea id="checkout-address" class="form-textarea" rows="2" placeholder="Building, flat/house number, street name"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-date" class="form-label">Preferred Date (optional)</label>
+          <input type="text" id="checkout-date" class="form-input" placeholder="e.g. 24 Oct or Weekend">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Preference *</label>
+          <div style="display: flex; gap: 1.25rem; font-size: 0.9rem; margin-top: 0.25rem;">
+            <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer;">
+              <input type="radio" name="paymentPreference" value="UPI" checked>
+              <span>UPI (QR sent on WhatsApp)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer;">
+              <input type="radio" name="paymentPreference" value="Cash">
+              <span>Cash on Delivery / Pickup</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-giftnote" class="form-label">Gift Card Message (optional)</label>
+          <input type="text" id="checkout-giftnote" class="form-input" placeholder="e.g. Happy Birthday Sneha! Love, Riya" maxlength="200">
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-notes" class="form-label">Order Notes (optional)</label>
+          <input type="text" id="checkout-notes" class="form-input" placeholder="Special delivery instructions">
+        </div>
+
+        <!-- Strict No Refund Policy Checkbox (Never pre-ticked, required per Section 15.6) -->
+        <label class="form-checkbox-label" style="margin: 1rem 0;">
+          <input type="checkbox" id="checkout-policy-checkbox" class="form-checkbox" required>
+          <span>I have read and agree to the <strong>No Refund Policy</strong> (handmade items, all sales final).</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Generate My Bill 🧾</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- The Order Bill Modal (Section 15.7) -->
+  <div id="order-bill-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card" style="max-width: 680px; padding: 2rem 1.5rem;">
+      <button type="button" id="bill-modal-close-btn" class="modal-close-btn" aria-label="Close bill">✕</button>
+      <div id="bill-card-content" class="bill-card"></div>
+    </div>
+  </div>
+
+  <!-- Scripts in dependency order -->
+  <script src="config.js"></script>
+  <script src="reviews.js"></script>
+  <script src="reviews-render.js"></script>
+  <script src="reviews-ui.js"></script>
+  <script src="products-loader.js"></script>
+  <script src="cart-bill.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
