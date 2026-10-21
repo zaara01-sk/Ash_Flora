@@ -1,5 +1,40 @@
 [
   {
+    "id": "blue-melody",
+    "name": "Blue Melody",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": 179,
+    "description": "A striking, open-petal azure blue flower featuring a dark midnight center dusted with delicate white-tipped stamen details and structured green leaves. It exudes an ethereal, dreamy vibe that instantly elevates any glass vase.🩵💙",
+    "details": [
+      "Height: approx 30-32 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Azure Blue with Midnight and White",
+        "swatch": "#2d8acc",
+        "images": [
+          "images/products/blue-melody/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "blossom-keychain",
     "name": "Blossom Keychain",
     "category": "keychains",
