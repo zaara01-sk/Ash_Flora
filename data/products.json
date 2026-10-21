@@ -1,5 +1,40 @@
 [
   {
+    "id": "ruby-charm",
+    "name": "Ruby Petal Charm",
+    "category": "keychains",
+    "price": 130,
+    "salePrice": null,
+    "description": "A vibrant statement keychain featuring bold ruby-red and crisp white-edged petals that instantly elevates your favorite purse or tote.❤️",
+    "details": [
+      "Height: approx. 10- 11 cm (with golden keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": false,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Ruby Red and White",
+        "swatch": "#b41932",
+        "images": [
+          "images/products/ruby-charm/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "bluemelo-charm",
     "name": "Blue Melody Charm",
     "category": "keychains",
