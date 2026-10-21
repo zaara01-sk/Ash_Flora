@@ -1,5 +1,40 @@
 [
   {
+    "id": "berry-orchid",
+    "name": "Vibrant Berry Orchid",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": 179,
+    "description": "Luxuriously rich berry-plum petals accented with deep ruby-wine accents at the core, finished with vibrant yellow stamen clusters. This sophisticated, darker tone brings a high-end, gallery-like charm to your room decor.🍓🩷",
+    "details": [
+      "Height: approx 25-30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Berry Mauve",
+        "swatch": "#cd8eb9",
+        "images": [
+          "images/products/berry-orchid/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "blue-melody",
     "name": "Blue Melody",
     "category": "single-flowers",
