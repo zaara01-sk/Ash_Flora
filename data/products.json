@@ -1,5 +1,40 @@
 [
   {
+    "id": "bluemelo-charm",
+    "name": "Blue Melody Charm",
+    "category": "keychains",
+    "price": 130,
+    "salePrice": null,
+    "description": "A charming, multi-petal blue floral charm attached to a sturdy gold-tone keyring chain, adding a dreamy pop of color to any bag or set of keys.💙",
+    "details": [
+      "Height: approx 25-30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": false,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Azure Blue with Deep Blue",
+        "swatch": "#2d8acc",
+        "images": [
+          "images/products/bluemelo-charm/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "bubblegum-charm",
     "name": "Blossom Bubblegum Charm",
     "category": "keychains",
