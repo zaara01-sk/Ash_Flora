@@ -1,5 +1,40 @@
 [
   {
+    "id": "date-tree",
+    "name": "Oasis Date Palm Tree",
+    "category": "log-gardens",
+    "price": 400,
+    "salePrice": null,
+    "description": "A meticulously crafted miniature palm tree featuring a textured brown trunk, arched green velvet fronds, and a rustic round base. A stunning and unique conversation piece for your coffee table or desk.🌴",
+    "details": [
+      "Height: approx 22-25 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "made-to-order",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Brown and Leaf Green",
+        "swatch": "#41824b",
+        "images": [
+          "images/products/date-tree/colour-1-1.webp"
+        ],
+        "status": "made-to-order"
+      }
+    ]
+  },
+  {
     "id": "rainbow-charm",
     "name": "Dreamy Rainbow Arch",
     "category": "keychains",
