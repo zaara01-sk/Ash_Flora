@@ -1,5 +1,49 @@
 [
   {
+    "id": "blossom-keychain",
+    "name": "Blossom Keychain",
+    "category": "keychains",
+    "price": 119,
+    "salePrice": null,
+    "description": "Compact, lightweight, and durable floral keychains featuring layered petal designs with contrasting centers and a sturdy silver keyring chain. Perfect for accessorizing your scooty keys, college bag, or wallet.",
+    "details": [
+      "Height: approx. 10- 11 cm (with keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry; gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pink",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/blossom-keychain/pink-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/blossom-keychain/yellow-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "trisun-pot",
     "name": "Tri Sunflower Pot",
     "category": "single-flowers",
