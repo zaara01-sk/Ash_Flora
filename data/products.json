@@ -1,5 +1,40 @@
 [
   {
+    "id": "rapunzel",
+    "name": "Rapunzel Flower",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": null,
+    "description": "☀️🦎💜A magical, fairytale-inspired statement stem featuring radiant golden-yellow outer petals framing soft pastel purple inner layers, complete with delicate, detailed floral stamens and lush green leaves. It brings an enchanting, storybook glow to any room.",
+    "details": [
+      "Height: approx 22-23 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Colour 1",
+        "swatch": "#f0cd1c",
+        "images": [
+          "images/products/rapunzel/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "ivory-lily",
     "name": "Sunlit Ivory Lily",
     "category": "single-flowers",
