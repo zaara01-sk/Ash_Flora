@@ -1,5 +1,40 @@
 [
   {
+    "id": "bubblegum-charm",
+    "name": "Blossom Bubblegum Charm",
+    "category": "keychains",
+    "price": 119,
+    "salePrice": 99,
+    "description": "A dainty, miniature closed-bud charm paired with a cute looped green ribbon bow, designed to dangle gracefully from your handbag zipper.",
+    "details": [
+      "Height: approx 11-12cm (with silver keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": false,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Soft Pink with Leaf Green",
+        "swatch": "#f5afb9",
+        "images": [
+          "images/products/bubblegum-charm/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "rapunzel",
     "name": "Rapunzel Flower",
     "category": "single-flowers",
