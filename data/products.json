@@ -1,5 +1,40 @@
 [
   {
+    "id": "spider-lily",
+    "name": "Crimson Spider Lily",
+    "category": "single-flowers",
+    "price": 220,
+    "salePrice": 199,
+    "description": "An eye-catching, intricate botanical stem featuring vibrant crimson-red textured clusters radiating outward like the legendary red spider lily, finished with a neat green calyx and stem. Perfect for a dramatic, anime-inspired solo-vase look!❤️",
+    "details": [
+      "Height: approx 30-35 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Crimson Red with Leaf Green",
+        "swatch": "#851423",
+        "images": [
+          "images/products/spider-lily/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "cupcake",
     "name": "Velvet Birthday Cupcake",
     "category": "pots",
