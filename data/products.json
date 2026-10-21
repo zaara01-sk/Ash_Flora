@@ -133,39 +133,5 @@
         "status": "in-stock"
       }
     ]
-  },
-  {
-    "id": "moss-log-garden",
-    "name": "Enchanted Moss Log Garden [Sample]",
-    "category": "log-gardens",
-    "price": 399,
-    "description": "Miniature woodland fantasy featuring colourful fuzzy blooms nestled in faux moss on a wooden log.",
-    "details": [
-      "Base: Hand-finished wooden log approx 14 cm length",
-      "Blooms: 4 sculpted pipe cleaner buds with preserved moss",
-      "Stands independently on any shelf or table",
-      "Handcrafted in Pune"
-    ],
-    "status": "made-to-order",
-    "leadTimeDays": 4,
-    "createdAt": "2026-10-19",
-    "featured": true,
-    "occasions": [
-      "Home decor",
-      "Anniversary",
-      "Diwali"
-    ],
-    "hidden": false,
-    "variants": [
-      {
-        "id": "forest",
-        "label": "Forest Flora",
-        "swatch": "#88B04B",
-        "images": [
-          "images/products/sample-log-garden/moss-1.jpg"
-        ],
-        "status": "made-to-order"
-      }
-    ]
   }
 ]
