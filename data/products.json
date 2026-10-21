@@ -135,41 +135,6 @@
     ]
   },
   {
-    "id": "bloombud-keyring",
-    "name": "BloomBud Blossom Keyring [Sample]",
-    "category": "keychains",
-    "price": 149,
-    "description": "Adorable miniature fuzzy flower bud that clips right onto your keys, bags, or backpacks.",
-    "details": [
-      "Size: approx 6 cm blossom + 4 cm chain",
-      "Includes sturdy rose-gold tone lobster clasp",
-      "Lightweight, fuzzy, and durable",
-      "Handcrafted in Pune"
-    ],
-    "badge": "Bestseller",
-    "status": "in-stock",
-    "leadTimeDays": 1,
-    "createdAt": "2026-10-10",
-    "featured": true,
-    "occasions": [
-      "Birthday",
-      "Raksha Bandhan",
-      "Home decor"
-    ],
-    "hidden": false,
-    "variants": [
-      {
-        "id": "blossom",
-        "label": "Blush Blossom",
-        "swatch": "#F08BA5",
-        "images": [
-          "images/products/sample-keyring/blossom-1.jpg"
-        ],
-        "status": "in-stock"
-      }
-    ]
-  },
-  {
     "id": "pastel-bouquet",
     "name": "Pastel Dream Wrapped Bouquet [Sample]",
     "category": "bouquets",
