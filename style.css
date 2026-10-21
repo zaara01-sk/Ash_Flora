@@ -121,7 +121,7 @@ input, textarea, select {
 .floating-petal {
   position: absolute;
   top: -40px;
-  opacity: 0.55;
+  opacity: 0.28;
   animation-name: driftPetal;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -606,14 +606,19 @@ input, textarea, select {
   background: var(--color-card-bg);
   border-radius: var(--radius-card);
   padding: 1.25rem;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 16px rgba(201, 79, 120, 0.06);
   border: 1px solid var(--color-blush);
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
-  transform-style: preserve-3d;
-  will-change: transform;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(201, 79, 120, 0.12);
+  }
 }
 
 @media (hover: hover) {

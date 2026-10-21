@@ -46,7 +46,7 @@
   {
     "id": "trisun-pot",
     "name": "Tri Sunflower Pot",
-    "category": "single-flowers",
+    "category": "pots",
     "price": 199,
     "salePrice": null,
     "description": "🌻A cheerful cluster of bright yellow pipe cleaner sunflowers with rich brown centers, snugly planted inside a matching handcrafted textured brown pot with lush green moss. It never wilts and brings instant sunshine to any study table or living room corner!🌻",
@@ -106,11 +106,11 @@
     "hidden": false,
     "variants": [
       {
-        "id": "colour-2",
+        "id": "colour-1",
         "label": "Blush Pink",
         "swatch": "#F6B3C1",
         "images": [
-          "images/products/tulip-stem/colour-2-1.webp"
+          "images/products/tulip-stem/colour-1-1.webp"
         ],
         "status": "in-stock"
       },

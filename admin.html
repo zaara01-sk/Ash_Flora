@@ -301,7 +301,7 @@
       <div id="tab-products" class="tab-content card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
           <h2 style="font-family: 'Fredoka', cursive; color: var(--color-deep-rose); font-size: 1.35rem;">Manage Products</h2>
-          <button type="button" class="btn btn-primary" onclick="switchTab('add-product')">+ Add New Product</button>
+          <button type="button" class="btn btn-primary" onclick="startNewProduct()">+ Add New Product</button>
         </div>
         <input type="text" id="admin-search" class="form-input" placeholder="Search by name or category..." style="margin-bottom: 1rem;">
         <div id="admin-products-list">Loading products...</div>
@@ -703,7 +703,7 @@
     function addVariantBlock(data = null) {
       const idx = variantBlocks.length;
       const variantObj = data || {
-        id: "colour-" + (idx + 1),
+        id: "colour-" + Date.now().toString(36) + "-" + (idx + 1),
         label: "Colour " + (idx + 1),
         swatch: "#F6B3C1",
         images: [],
@@ -1012,7 +1012,45 @@
       editProductWithData(liveProducts[idx]);
     }
 
+    
+    function resetProductForm() {
+      document.getElementById("wizard-title").textContent = "Add New Handcrafted Bloom";
+      const form = document.getElementById("product-wizard-form");
+      if (form) form.reset();
+      const idInput = document.getElementById("prod-id");
+      idInput.value = "";
+      delete idInput.dataset.manual;
+      document.getElementById("prod-title").value = "";
+      document.getElementById("prod-price").value = "";
+      document.getElementById("prod-saleprice").value = "";
+      document.getElementById("prod-cat").value = "single-flowers";
+      document.getElementById("prod-desc").value = "";
+      document.getElementById("prod-details").value = "Height: approx 25-30 cm\nMaterial: Premium plush chenille pipe cleaners & floral wire\nCare: Keep dry, gently dust with a soft brush\nHandcrafted one petal at a time in Pune";
+      document.getElementById("prod-status").value = "in-stock";
+      document.getElementById("prod-leadtime").value = 2;
+      document.getElementById("prod-badge").value = "";
+      document.getElementById("prod-featured").checked = true;
+      document.getElementById("prod-hidden").checked = false;
+      document.getElementById("desc-count").textContent = "0 / 400";
+
+      variantBlocks = [{
+        id: "colour-1",
+        label: "Colour 1",
+        swatch: "#F6B3C1",
+        images: [],
+        rawFiles: []
+      }];
+      renderVariants();
+      goToStep(1);
+    }
+
+    function startNewProduct() {
+      resetProductForm();
+      switchTab("add-product");
+    }
+
     function editProductWithData(p) {
+      document.getElementById("wizard-title").textContent = "Edit " + p.name;
       document.getElementById("prod-title").value = p.name;
       document.getElementById("prod-id").value = p.id;
       document.getElementById("prod-price").value = p.price;
