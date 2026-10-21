@@ -1,5 +1,40 @@
 [
   {
+    "id": "sunshine-charm",
+    "name": "Sunshine Daisy Charm",
+    "category": "keychains",
+    "price": 130,
+    "salePrice": null,
+    "description": "A cheerful little sunshine-yellow flower charm complete with a rich brown center, bringing a warm and happy vibe wherever you go.",
+    "details": [
+      "Height: approx 10-11cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": true,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Colour 1",
+        "swatch": "#ffd72d",
+        "images": [
+          "images/products/sunshine-charm/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "ruby-charm",
     "name": "Ruby Petal Charm",
     "category": "keychains",
