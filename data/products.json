@@ -1,5 +1,40 @@
 [
   {
+    "id": "cupcake",
+    "name": "Velvet Birthday Cupcake",
+    "category": "pots",
+    "price": 250,
+    "salePrice": null,
+    "description": "A charming, textured pipe cleaner cupcake featuring pink-and-white striped wrapper details, rich chocolate frosting swirls, and a cute little birthday candle with a glowing yellow flame right on top. A delightful non-perishable decor piece for desks or birthdays!🎂🧁",
+    "details": [
+      "Height: approx 10-11cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Pink, Chocolate Brown",
+        "swatch": "#ebafb9",
+        "images": [
+          "images/products/cupcake/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "date-tree",
     "name": "Oasis Date Palm Tree",
     "category": "log-gardens",
