@@ -1,5 +1,40 @@
 [
   {
+    "id": "rainbow-charm",
+    "name": "Dreamy Rainbow Arch",
+    "category": "keychains",
+    "price": 150,
+    "salePrice": null,
+    "description": "A whimsical pastel rainbow arch keychain featuring fluffy white cloud puffs at both ends, bringing a sweet and cheerful touch to your daily accessories.🌈☁️",
+    "details": [
+      "Height: approx 10-11cm (with golden keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Pastel Rainbow (Sky Blue, Pink, Yellow) with White",
+        "swatch": "#aad7f5",
+        "images": [
+          "images/products/rainbow-charm/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
     "id": "sunshine-charm",
     "name": "Sunshine Daisy Charm",
     "category": "keychains",
