@@ -1,0 +1,277 @@
+[
+  {
+    "id": "ivory-lily",
+    "name": "Sunlit Ivory Lily",
+    "category": "single-flowers",
+    "price": 129,
+    "salePrice": null,
+    "description": "A radiant, crisp white statement piece featuring soft golden-yellow and lilac-tinted inner layers, complete with delicate, detailed floral stamens and lush green leaves. It captures a fresh, elegant glow all year round.🤍🔆",
+    "details": [
+      "Height: approx 20-21 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": false,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Ivory",
+        "swatch": "#fffafb",
+        "images": [
+          "images/products/ivory-lily/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "multi-daisy",
+    "name": "Dreamscape Daisies",
+    "category": "log-gardens",
+    "price": 349,
+    "salePrice": null,
+    "description": "🌼A whimsical, wiggly mini garden arrangement featuring a delightful cluster of multi-colored pastel daisies—ranging from soft blush and lavender to sky blue and sunny cream—nestled securely inside a rustic wooden slice log. Pure aesthetic joy for your bedside or workspace!",
+    "details": [
+      "Height: approx 10-11 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Pastel Mix (Blush, Lavender, Sky Blue, and Sunny Cream etc)",
+        "swatch": "#f5d7e1",
+        "images": [
+          "images/products/multi-daisy/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "berry-orchid",
+    "name": "Vibrant Berry Orchid",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": null,
+    "description": "Luxuriously rich berry-plum petals accented with deep ruby-wine accents at the core, finished with vibrant yellow stamen clusters. This sophisticated, darker tone brings a high-end, gallery-like charm to your room decor.🍓🩷",
+    "details": [
+      "Height: approx 25-30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Berry Mauve",
+        "swatch": "#cd8eb9",
+        "images": [
+          "images/products/berry-orchid/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "blue-melody",
+    "name": "Blue Melody",
+    "category": "single-flowers",
+    "price": 199,
+    "salePrice": null,
+    "description": "A striking, open-petal azure blue flower featuring a dark midnight center dusted with delicate white-tipped stamen details and structured green leaves. It exudes an ethereal, dreamy vibe that instantly elevates any glass vase.🩵💙",
+    "details": [
+      "Height: approx 30-32 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Limited",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": false,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-1",
+        "label": "Azure Blue with Midnight and White",
+        "swatch": "#2d8acc",
+        "images": [
+          "images/products/blue-melody/colour-1-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "blossom-keychain",
+    "name": "Blossom Keychain",
+    "category": "keychains",
+    "price": 119,
+    "salePrice": null,
+    "description": "Compact, lightweight, and durable floral keychains featuring layered petal designs with contrasting centers and a sturdy silver keyring chain. Perfect for accessorizing your scooty keys, college bag, or wallet.",
+    "details": [
+      "Height: approx. 10- 11 cm (with keychain)",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry; gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "pink",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/blossom-keychain/pink-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/blossom-keychain/yellow-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "trisun-pot",
+    "name": "Tri Sunflower Pot",
+    "category": "pots",
+    "price": 199,
+    "salePrice": null,
+    "description": "🌻A cheerful cluster of bright yellow pipe cleaner sunflowers with rich brown centers, snugly planted inside a matching handcrafted textured brown pot with lush green moss. It never wilts and brings instant sunshine to any study table or living room corner!🌻",
+    "details": [
+      "Height: approx 10-12 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune",
+      "Wooden Base is for display purpose only, not with the product."
+    ],
+    "badge": "Bestseller",
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "yellow",
+        "label": "Sunny Yellow",
+        "swatch": "#F9C846",
+        "images": [
+          "images/products/trisun-pot/yellow-1.webp",
+          "images/products/trisun-pot/yellow-2.webp",
+          "images/products/trisun-pot/yellow-3.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  },
+  {
+    "id": "tulip-stem",
+    "name": "Tulip stem",
+    "category": "single-flowers",
+    "price": 179,
+    "salePrice": 149,
+    "description": "Soft, velvety hand-twisted pipe cleaner tulip that never wilts. Perfect for vases or gifting. 🌷🌷🌷",
+    "details": [
+      "Height: approx.28- 30 cm",
+      "Material: Premium plush chenille pipe cleaners & floral wire",
+      "Care: Keep dry, gently dust with a soft brush",
+      "Handcrafted one petal at a time in Pune"
+    ],
+    "badge": null,
+    "status": "in-stock",
+    "leadTimeDays": 2,
+    "createdAt": "2026-10-21",
+    "featured": true,
+    "occasions": [
+      "Birthday",
+      "Anniversary"
+    ],
+    "hidden": false,
+    "variants": [
+      {
+        "id": "colour-3",
+        "label": "Mauve Haze",
+        "swatch": "#e2b1d0",
+        "images": [
+          "images/products/tulip-stem/colour-3-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-mvi58yjf-2",
+        "label": "Sunset Yellow",
+        "swatch": "#f5b42d",
+        "images": [
+          "images/products/tulip-stem/colour-mvi58yjf-2-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-mvi5aybl-3",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/tulip-stem/colour-mvi5aybl-3-1.webp"
+        ],
+        "status": "in-stock"
+      }
+    ]
+  }
+]
