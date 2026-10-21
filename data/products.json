@@ -238,7 +238,7 @@
     "status": "in-stock",
     "leadTimeDays": 2,
     "createdAt": "2026-10-21",
-    "featured": true,
+    "featured": false,
     "occasions": [
       "Birthday",
       "Anniversary"
