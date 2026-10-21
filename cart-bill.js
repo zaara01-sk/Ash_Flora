@@ -211,7 +211,15 @@ class CartManager {
   }
 
   getSubtotal() {
-    return this.items.reduce((sum, it) => sum + (it.price * it.quantity), 0);
+    return this.items
+      .filter(it => !it.unavailable)
+      .reduce((sum, it) => sum + (it.price * it.quantity), 0);
+  }
+
+  getAvailableItemCount() {
+    return this.items
+      .filter(it => !it.unavailable)
+      .reduce((sum, it) => sum + (it.quantity || 0), 0);
   }
 
   hasUnavailableItems() {

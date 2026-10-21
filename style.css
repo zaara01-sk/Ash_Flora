@@ -1691,3 +1691,58 @@ body.has-bottom-bar .floating-wa-btn {
     transform: none !important;
   }
 }
+
+/* Cart Item Styling Enhancements */
+.cart-item-row.is-unavailable {
+  background: #FFF5F7;
+  border: 1.5px dashed var(--color-rose);
+  border-radius: 14px;
+  padding: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart-item-cancel-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFE4EC;
+  color: var(--color-alert);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.cart-item-cancel-btn:hover {
+  background: var(--color-alert);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.cart-remove-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-badge);
+  background: #FFF0F4;
+  color: var(--color-alert);
+  border: 1px solid #FCD4DE;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.cart-remove-pill:hover {
+  background: var(--color-alert);
+  color: #FFFFFF;
+  border-color: var(--color-alert);
+}

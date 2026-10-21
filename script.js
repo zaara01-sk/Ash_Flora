@@ -768,25 +768,29 @@ function updateCartUI() {
 
   cart.items.forEach(item => {
     const row = document.createElement("div");
-    row.className = "cart-item-row";
-    if (item.unavailable) row.style.opacity = "0.55";
+    row.className = "cart-item-row" + (item.unavailable ? " is-unavailable" : "");
 
     row.innerHTML = `
       <img src="${item.image}" class="cart-item-img" alt="${item.name}">
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-variant">${item.variantLabel} · ${formatRupees(item.price)} each</div>
-        ${item.unavailable ? `<span style="color: var(--color-alert); font-size: 0.75rem; font-weight: 700;">${item.unavailableReason}</span>` : ""}
-        <input type="text" class="cart-item-note-input" placeholder="Line note (e.g. colour mix)" value="${item.note || ""}" maxlength="100" data-note-pid="${item.productId}" data-note-vid="${item.variantId}">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem;">
-          <div class="stepper-control" style="transform: scale(0.85); transform-origin: left;">
-            <button type="button" class="stepper-btn cart-minus" data-pid="${item.productId}" data-vid="${item.variantId}">−</button>
-            <span class="stepper-value">${item.quantity}</span>
-            <button type="button" class="stepper-btn cart-plus" data-pid="${item.productId}" data-vid="${item.variantId}">+</button>
-          </div>
-          <button type="button" style="color: var(--color-muted-ink); font-size: 0.8rem; font-weight: 700;" class="cart-remove-btn" data-pid="${item.productId}" data-vid="${item.variantId}">Remove</button>
+        ${item.unavailable ? `<div style="color: var(--color-alert); font-size: 0.78rem; font-weight: 700; margin: 0.2rem 0;">⚠️ ${item.unavailableReason}</div>` : ""}
+        ${!item.unavailable ? `<input type="text" class="cart-item-note-input" placeholder="Line note (e.g. colour mix)" value="${item.note || ""}" maxlength="100" data-note-pid="${item.productId}" data-note-vid="${item.variantId}">` : ""}
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          ${!item.unavailable ? `
+            <div class="stepper-control" style="transform: scale(0.85); transform-origin: left;">
+              <button type="button" class="stepper-btn cart-minus" data-pid="${item.productId}" data-vid="${item.variantId}" aria-label="Decrease quantity">−</button>
+              <span class="stepper-value">${item.quantity}</span>
+              <button type="button" class="stepper-btn cart-plus" data-pid="${item.productId}" data-vid="${item.variantId}" aria-label="Increase quantity">+</button>
+            </div>
+          ` : `<span style="font-size: 0.8rem; color: var(--color-muted-ink); font-weight: 600;">Qty: ${item.quantity}</span>`}
+          <button type="button" class="cart-remove-pill cart-remove-btn" data-pid="${item.productId}" data-vid="${item.variantId}">
+            <span>✕ Remove</span>
+          </button>
         </div>
       </div>
+      <button type="button" class="cart-item-cancel-btn cart-remove-btn" data-pid="${item.productId}" data-vid="${item.variantId}" aria-label="Remove item">✕</button>
     `;
 
     list.appendChild(row);
@@ -817,18 +821,29 @@ function updateCartUI() {
   });
 
   // Summary lines
-  const giftWrapCost = cart.giftWrap ? (config.giftWrapPrice || 0) : 0;
+  const hasAvailable = cart.items.some(it => !it.unavailable);
+  const giftWrapContainer = document.getElementById("cart-giftwrap-container");
+  const giftWrapCb = document.getElementById("cart-giftwrap-checkbox");
+
+  // Only offer gift wrap if there is at least one available flower to wrap
+  if (giftWrapContainer) {
+    giftWrapContainer.style.display = hasAvailable ? "block" : "none";
+  }
+  if (!hasAvailable && cart.giftWrap) {
+    cart.setGiftWrap(false);
+  }
+
+  const giftWrapCost = (cart.giftWrap && hasAvailable) ? (config.giftWrapPrice || 0) : 0;
   const total = subtotal + giftWrapCost;
 
   document.getElementById("cart-subtotal").textContent = formatRupees(subtotal);
-  document.getElementById("cart-giftwrap-line").style.display = cart.giftWrap ? "flex" : "none";
+  document.getElementById("cart-giftwrap-line").style.display = (cart.giftWrap && hasAvailable) ? "flex" : "none";
   document.getElementById("cart-giftwrap-val").textContent = formatRupees(giftWrapCost);
   document.getElementById("cart-total").textContent = formatRupees(total);
 
-  // Gift wrap checkbox in drawer
-  const giftWrapCb = document.getElementById("cart-giftwrap-checkbox");
   if (giftWrapCb) {
-    giftWrapCb.checked = cart.giftWrap;
+    giftWrapCb.checked = Boolean(cart.giftWrap && hasAvailable);
+    giftWrapCb.disabled = !hasAvailable;
     giftWrapCb.onchange = () => cart.setGiftWrap(giftWrapCb.checked);
   }
 
