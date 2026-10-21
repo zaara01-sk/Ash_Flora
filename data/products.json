@@ -135,51 +135,6 @@
     ]
   },
   {
-    "id": "pastel-bouquet",
-    "name": "Pastel Dream Wrapped Bouquet [Sample]",
-    "category": "bouquets",
-    "price": 499,
-    "description": "A signature multi-flower bouquet hand-tied with elegant satin ribbons and craft wrapping paper.",
-    "details": [
-      "Includes 5-6 handcrafted blooms and foliage stems",
-      "Arrives fully wrapped in luxury matte paper with satin ribbon",
-      "Everlasting keepsake gift",
-      "Handcrafted in Pune"
-    ],
-    "badge": "Limited",
-    "status": "made-to-order",
-    "leadTimeDays": 3,
-    "createdAt": "2026-10-15",
-    "featured": true,
-    "occasions": [
-      "Birthday",
-      "Anniversary",
-      "Wedding",
-      "Valentine's"
-    ],
-    "hidden": false,
-    "variants": [
-      {
-        "id": "pastel",
-        "label": "Pastel Bliss",
-        "swatch": "#FBD5DF",
-        "images": [
-          "images/products/sample-bouquet/pastel-1.jpg"
-        ],
-        "status": "made-to-order"
-      },
-      {
-        "id": "lavender",
-        "label": "Calm Lavender",
-        "swatch": "#C5A3CF",
-        "images": [
-          "images/products/sample-bouquet/lavender-1.jpg"
-        ],
-        "status": "made-to-order"
-      }
-    ]
-  },
-  {
     "id": "moss-log-garden",
     "name": "Enchanted Moss Log Garden [Sample]",
     "category": "log-gardens",
