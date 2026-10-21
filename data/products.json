@@ -94,7 +94,7 @@
       "Care: Keep dry, gently dust with a soft brush",
       "Handcrafted one petal at a time in Pune"
     ],
-    "badge": "Bestseller",
+    "badge": null,
     "status": "in-stock",
     "leadTimeDays": 2,
     "createdAt": "2026-10-21",
@@ -106,29 +106,29 @@
     "hidden": false,
     "variants": [
       {
-        "id": "colour-1",
-        "label": "Blush Pink",
-        "swatch": "#F6B3C1",
-        "images": [
-          "images/products/tulip-stem/colour-1-1.webp"
-        ],
-        "status": "in-stock"
-      },
-      {
-        "id": "colour-2",
-        "label": "Golden Sunset yellow",
-        "swatch": "#fec64d",
-        "images": [
-          "images/products/tulip-stem/colour-2-1.webp"
-        ],
-        "status": "in-stock"
-      },
-      {
         "id": "colour-3",
         "label": "Mauve Haze",
         "swatch": "#e2b1d0",
         "images": [
           "images/products/tulip-stem/colour-3-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-mvi58yjf-2",
+        "label": "Sunset Yellow",
+        "swatch": "#f5b42d",
+        "images": [
+          "images/products/tulip-stem/colour-mvi58yjf-2-1.webp"
+        ],
+        "status": "in-stock"
+      },
+      {
+        "id": "colour-mvi5aybl-3",
+        "label": "Blush Pink",
+        "swatch": "#F6B3C1",
+        "images": [
+          "images/products/tulip-stem/colour-mvi5aybl-3-1.webp"
         ],
         "status": "in-stock"
       }
