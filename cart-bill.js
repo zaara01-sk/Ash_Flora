@@ -287,7 +287,10 @@ function buildWhatsAppBillText(billData, config) {
   });
 
   lines.push(`----------------------------------`);
-  lines.push(`Items Total: *${formatRupees(billData.subtotal)}*`);
+  lines.push(`Items Subtotal: *${formatRupees(billData.subtotal)}*`);
+  if (billData.discountAmount > 0) {
+    lines.push(`10% Festive Discount: *-₹${billData.discountAmount}*`);
+  }
   if (billData.giftWrapPrice > 0) {
     lines.push(`Gift Wrap: *${formatRupees(billData.giftWrapPrice)}*`);
   }
@@ -440,6 +443,16 @@ function renderBillToCanvas(billData, config) {
   ctx.fillText("Items Subtotal", 40, y);
   ctx.textAlign = "right";
   ctx.fillText(formatRupees(billData.subtotal), width - 40, y);
+
+  if (billData.discountAmount > 0) {
+    y += 22;
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#4FA37B";
+    ctx.fillText("10% Festive Savings (>₹1,500)", 40, y);
+    ctx.textAlign = "right";
+    ctx.fillText("- " + formatRupees(billData.discountAmount), width - 40, y);
+    ctx.fillStyle = "#7C5869";
+  }
 
   if (billData.giftWrapPrice > 0) {
     y += 22;

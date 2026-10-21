@@ -378,7 +378,7 @@ function createProductCard(product) {
   btnCart.addEventListener("click", () => {
     if (activeVariant.status === "sold-out" || product.status === "sold-out") {
       // Open WhatsApp custom request (CAT-6)
-      const num = window.CONFIG?.WHATSAPP_NUMBER || "919876543210";
+      const num = window.CONFIG?.WHATSAPP_NUMBER || "919307747664";
       const text = `Hi Ash Flora! I saw that ${product.name} (${activeVariant.label}) is sold out. Could you custom make one for me?`;
       window.open(`https://wa.me/${num}?text=${encodeURIComponent(text)}`, "_blank");
       return;
@@ -625,7 +625,7 @@ function openProductModal(product, initialVariant) {
 
   addBtn.onclick = () => {
     if (activeVariant.status === "sold-out" || product.status === "sold-out") {
-      const num = window.CONFIG?.WHATSAPP_NUMBER || "919876543210";
+      const num = window.CONFIG?.WHATSAPP_NUMBER || "919307747664";
       const text = `Hi Ash Flora! I'd like to ask for a custom order for: ${product.name} (${activeVariant.label}).`;
       window.open(`https://wa.me/${num}?text=${encodeURIComponent(text)}`, "_blank");
       return;
@@ -833,8 +833,21 @@ function updateCartUI() {
     cart.setGiftWrap(false);
   }
 
+  // 10% Discount for orders above ₹1,500
+  const discountAmount = subtotal > 1500 ? Math.round(subtotal * 0.10) : 0;
+  const discountLine = document.getElementById("cart-discount-line");
+  const discountVal = document.getElementById("cart-discount-val");
+  if (discountLine && discountVal) {
+    if (discountAmount > 0) {
+      discountLine.style.display = "flex";
+      discountVal.textContent = "- " + formatRupees(discountAmount);
+    } else {
+      discountLine.style.display = "none";
+    }
+  }
+
   const giftWrapCost = (cart.giftWrap && hasAvailable) ? (config.giftWrapPrice || 0) : 0;
-  const total = subtotal + giftWrapCost;
+  const total = Math.max(0, subtotal - discountAmount) + giftWrapCost;
 
   document.getElementById("cart-subtotal").textContent = formatRupees(subtotal);
   document.getElementById("cart-giftwrap-line").style.display = (cart.giftWrap && hasAvailable) ? "flex" : "none";
@@ -941,7 +954,8 @@ function setupCheckout() {
       const config = window.CONFIG || {};
       const giftWrapPrice = cart.giftWrap ? (config.giftWrapPrice || 0) : 0;
       const subtotal = cart.getSubtotal();
-      const total = subtotal + giftWrapPrice;
+      const discountAmount = subtotal > 1500 ? Math.round(subtotal * 0.10) : 0;
+      const total = Math.max(0, subtotal - discountAmount) + giftWrapPrice;
 
       const billData = {
         invoiceNo,
@@ -959,6 +973,7 @@ function setupCheckout() {
         },
         items: [...cart.items],
         subtotal,
+        discountAmount,
         giftWrapPrice,
         total
       };
@@ -1036,6 +1051,12 @@ function displayBillModal(billData) {
         <span>Items Subtotal:</span>
         <strong>${formatRupees(billData.subtotal)}</strong>
       </div>
+      ${billData.discountAmount > 0 ? `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; color: var(--color-success); font-weight: 700;">
+          <span>10% Festive Savings (>₹1,500):</span>
+          <strong>- ${formatRupees(billData.discountAmount)}</strong>
+        </div>
+      ` : ""}
       ${billData.giftWrapPrice > 0 ? `
         <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
           <span>Gift Wrap & Ribbon:</span>
@@ -1094,7 +1115,7 @@ function displayBillModal(billData) {
 
   // Send WhatsApp (Primary action)
   document.getElementById("bill-send-wa-btn").onclick = () => {
-    const num = config.WHATSAPP_NUMBER || "919876543210";
+    const num = config.WHATSAPP_NUMBER || "919307747664";
     const waUrl = `https://wa.me/${num}?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, "_blank");
   };
@@ -1126,9 +1147,13 @@ function displayBillModal(billData) {
     }
   };
 
-  // Download PDF
+  // Download PDF / Print Invoice
   document.getElementById("bill-pdf-btn").onclick = () => {
-    window.print();
+    // Ensure bill modal is completely scrolled to top before triggering print dialog
+    modal.scrollTop = 0;
+    setTimeout(() => {
+      window.print();
+    }, 150);
   };
 
   // Copy Bill text
@@ -1283,7 +1308,7 @@ async function initStore() {
     customForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const desc = document.getElementById("custom-desc").value.trim();
-      const num = window.CONFIG?.WHATSAPP_NUMBER || "919876543210";
+      const num = window.CONFIG?.WHATSAPP_NUMBER || "919307747664";
       const text = `Hi Ash Flora! I would like to inquire about a custom handcrafted order:\n\n"${desc}"\n\n(I understand there is a 50% non-refundable advance required).`;
       window.open(`https://wa.me/${num}?text=${encodeURIComponent(text)}`, "_blank");
     });

@@ -1644,28 +1644,56 @@ body.has-bottom-bar .floating-wa-btn {
 }
 
 /* ==========================================================================
-   PRINT STYLESHEET FOR BILL (Section 15.7)
+   PRINT STYLESHEET FOR BILL / PDF DOWNLOAD
    ========================================================================== */
 @media print {
+  @page {
+    margin: 1cm;
+    size: A4 portrait;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
   body * {
     visibility: hidden;
   }
+
   #order-bill-modal, #order-bill-modal * {
     visibility: visible;
   }
+
   #order-bill-modal {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
+    inset: 0 !important;
     background: #FFFFFF !important;
-    padding: 0;
+    padding: 0 !important;
+    display: block !important;
+    backdrop-filter: none !important;
+    z-index: 99999 !important;
   }
-  .bill-card {
-    border: none !important;
+
+  .modal-card {
     box-shadow: none !important;
+    border: none !important;
     padding: 0 !important;
     max-width: 100% !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
-  .bill-actions-grid, .modal-close-btn {
+
+  .bill-card {
+    border: 1px solid #E0E0E0 !important;
+    box-shadow: none !important;
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+  }
+
+  .bill-actions-grid, .modal-close-btn, #bill-modal-close-btn {
     display: none !important;
   }
 }
@@ -1745,4 +1773,76 @@ body.has-bottom-bar .floating-wa-btn {
   background: var(--color-alert);
   color: #FFFFFF;
   border-color: var(--color-alert);
+}
+
+/* ==========================================================================
+   MOBILE-FIRST DENSE 2-COLUMN PRODUCT GRID
+   Shows 4 products immediately on mobile viewports without endless scrolling
+   ========================================================================== */
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+
+  .product-card {
+    padding: 0.65rem !important;
+    border-radius: 16px !important;
+  }
+
+  .product-img-wrap {
+    border-radius: 12px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .product-name {
+    font-size: 0.92rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .product-price {
+    font-size: 0.95rem !important;
+  }
+
+  .product-original-price {
+    font-size: 0.75rem !important;
+  }
+
+  .product-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.15rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .product-desc {
+    display: none !important; /* Hide long description block in 2-column mobile grid for clean aesthetic */
+  }
+
+  .product-badge-flag {
+    top: 0.75rem !important;
+    left: 0.75rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.15rem 0.45rem !important;
+  }
+
+  .swatch-btn {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .product-swatches-row {
+    margin-bottom: 0.4rem !important;
+    gap: 0.25rem !important;
+  }
+
+  .btn-add-cart {
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.78rem !important;
+    min-height: 36px !important;
+  }
+
+  .product-card-actions {
+    margin-top: auto !important;
+  }
 }

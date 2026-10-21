@@ -5,7 +5,7 @@ const DEFAULT_CONFIG = {
   SHOP_NAME: "Ash Flora",
   TAGLINE: "Handmade Pipe Cleaner Blooms in Pune",
   CITY: "Pune",
-  WHATSAPP_NUMBER: "919876543210",
+  WHATSAPP_NUMBER: "919307747664",
   INSTAGRAM_HANDLE: "ashflora.pune",
   REVIEW_FORM_URL: "",
   announcement: "🌸 Handmade pipe cleaner blooms in Pune · Local delivery & pickup available",
