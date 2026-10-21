@@ -518,6 +518,7 @@ class LoveNotesManager {
       "single-flowers": 0,
       "bouquets": 0,
       "log-gardens": 0,
+      "pots": 0,
       "with-photos": 0
     };
 
@@ -536,6 +537,7 @@ class LoveNotesManager {
       { id: "single-flowers", label: "Single Flowers" },
       { id: "bouquets", label: "Bouquets" },
       { id: "log-gardens", label: "Log Gardens" },
+      { id: "pots", label: "Pots" },
       { id: "with-photos", label: "With Photos" }
     ];
 

@@ -208,7 +208,8 @@ function updateCategoryTileCounts(products) {
     "keychains": 0,
     "single-flowers": 0,
     "bouquets": 0,
-    "log-gardens": 0
+    "log-gardens": 0,
+    "pots": 0
   };
 
   products.forEach(p => {

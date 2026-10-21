@@ -5,7 +5,8 @@ const ALLOWED_CATEGORIES = new Set([
   "keychains",
   "single-flowers",
   "bouquets",
-  "log-gardens"
+  "log-gardens",
+  "pots"
 ]);
 
 const CACHE_KEY = "ash_flora_products_cache_v2";

@@ -358,6 +358,7 @@
                 <option value="keychains">Keychains</option>
                 <option value="bouquets">Bouquets</option>
                 <option value="log-gardens">Log Gardens</option>
+                <option value="pots">Pots</option>
               </select>
             </div>
             <div class="form-group">
@@ -651,6 +652,7 @@
             <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="duplicateProduct(${idx})">Duplicate</button>
             <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="toggleSoldOut(${idx})">${p.status === 'sold-out' ? 'In Stock' : 'Sold Out'}</button>
             <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="toggleHide(${idx})">${p.hidden ? 'Show' : 'Hide'}</button>
+            <button type="button" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; border-color: var(--color-alert); color: var(--color-alert);" onclick="deleteProduct(${idx})">Delete</button>
           </div>
         `;
         container.appendChild(row);
@@ -983,6 +985,18 @@
       p.hidden = !p.hidden;
       await saveEntireCatalogue(`Toggle hide for ${p.id}`);
       renderAdminProductsList(liveProducts);
+    }
+
+    // Delete product
+    async function deleteProduct(idx) {
+      const p = liveProducts[idx];
+      if (!confirm(`Are you sure you want to permanently delete "${p.name}"? This action cannot be undone.`)) {
+        return;
+      }
+      liveProducts.splice(idx, 1);
+      await saveEntireCatalogue(`Delete product ${p.id}`);
+      renderAdminProductsList(liveProducts);
+      showAdminToast(`Deleted "${p.name}" 🗑️`);
     }
 
     // Duplicate product (ADM-3)
